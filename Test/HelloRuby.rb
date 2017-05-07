@@ -14,3 +14,16 @@ print("面積：#{area}\n", "体積： #{volume}\n")
 print(intX == intY, "\n")
 print(intX > intY, "\n")
 print(intX < intY, "\n")
+a = 20
+if a > 50 then#if
+  print("a = #{a} > 50\n")
+else
+  print("a = #{a} <= 50\n")
+end
+
+while a <= 50
+  print("a = #{a}\n")
+  a += 1
+end
+
+print("a > 50, a = #{a}\n")
