@@ -62,3 +62,28 @@ print(/hello/, "\n")
 
 puts("first: #{ARGV[0]}")
 puts("second #{ARGV[1]}")
+p("12".to_i)
+p("12")
+p(12.to_f)
+
+fileName = ARGV[0]
+file = File.open("test.txt")
+=begin text = File.read
+File.close
+=end
+file.each_line do |line|
+  print(line)
+end
+puts("")
+file.close
+puts("------------------------------------------")
+pattern = Regexp.new(ARGV[0])
+file = File.open("test.txt")
+count = 1
+file.each_line do |line|
+  if pattern =~ line
+    print(count<=9?"0#{count}":count, ":  ", line)
+  end
+  count += 1
+end
+file.close
