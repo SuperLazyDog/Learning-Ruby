@@ -53,5 +53,12 @@ end
 sym = :test
 print(sym.to_s())
 #myHash = {:a => 1, :b => 2, :c => 3}
-myHash = {ab : "1", ba : "2"}
-print(myHash[:a])
+myHash = {ab: "1", ba: "2"}
+print(myHash[:ab], "\n")
+/hello/ =~ "hello, Ruby"
+/Ruby/ =~ "hello, Ruby"
+print(/Ruby/, "\n")
+print(/hello/, "\n")
+
+puts("first: #{ARGV[0]}")
+puts("second #{ARGV[1]}")
