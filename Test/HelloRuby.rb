@@ -50,6 +50,7 @@ end
 "eachChar".each_char { |chr|
   print(chr, "\n")}
 
+#dictionary
 sym = :test
 print(sym.to_s())
 #myHash = {:a => 1, :b => 2, :c => 3}
@@ -87,3 +88,9 @@ file.each_line do |line|
   count += 1
 end
 file.close
+
+def hello
+  puts("hello ruby")
+end
+
+hello()
