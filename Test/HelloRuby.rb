@@ -27,3 +27,31 @@ while a <= 50
 end
 
 print("a > 50, a = #{a}\n")
+
+times = 100
+count = 1
+times.times do
+  print("I like Ruby, time = #{count}\n")
+  count += 1
+end
+
+10.times do
+  print("just a test\n")
+end
+
+nameArray = ["one", "two", "three", "four"]
+print("name: ", nameArray[1], "\n")
+nameArray[3] = 1224#Rubyの配列にはどんなものも入れられる
+print("nameArray[3] = #{nameArray[3]}\n")
+print("nameArray's size = #{nameArray.size}\n")
+nameArray.each do |str|
+  print(str, "\n")
+end
+"eachChar".each_char { |chr|
+  print(chr, "\n")}
+
+sym = :test
+print(sym.to_s())
+#myHash = {:a => 1, :b => 2, :c => 3}
+myHash = {ab : "1", ba : "2"}
+print(myHash[:a])
