@@ -1,4 +1,7 @@
 #class and modele test file
+#-------------------------------------------------------------
+#                           测试一
+#-------------------------------------------------------------
 class MyFirst
   #------------------------------------------
   #                内部属性
@@ -12,7 +15,7 @@ class MyFirst
   attr_writer :b
   attr_accessor :c
   #access test
-  attr_accessor all? { |e|  }
+  #attr_accessor all? { |e|  }
   #------------------------------------------
   #               初始化函数
   #------------------------------------------
@@ -93,3 +96,51 @@ print("use class method to get count: ")
 puts(MyFirst.getCount())
 puts("----------------------------------------")
 puts("            access test")
+#-------------------------------------------------------------
+#                           测试二
+#-------------------------------------------------------------
+class MySecond
+  #------------------------------------------
+  #                内部属性
+  #------------------------------------------
+  #----------------------
+  #       静态属性
+  #----------------------
+  @@staticProperty = 0
+  #----------------------
+  #       实例属性
+  #----------------------
+  attr_reader :readerTest
+  attr_writer :writerTest
+  attr_accessor :accessorTest
+  #------------------------------------------
+  #               初始化函数
+  #------------------------------------------
+  def initialize
+    @readerTest = @writerTest = @accessorTest = 1
+    print("readerTest: #{@readerTest}, writerTest: #{@writerTest}, accessorTest: #{@accessorTest}\n")
+  end
+  #------------------------------------------
+  #                  方法
+  #------------------------------------------
+  #----------------------
+  #       实例方法
+  #----------------------
+  def helloFunc()
+    print("hello\n")
+    @@staticProperty += 1
+  end
+
+  #----------------------
+  #       静态方法
+  #----------------------
+  def MySecond.staticProperty()
+    return @@staticProperty
+  end
+end
+
+secondInstance = MySecond.new()
+puts("----------------------------------------")
+print("out readerTest: #{secondInstance.readerTest}\n")
+#print("out writerTest: #{secondInstance.writerTest}\n")
+print("out accessorTest: #{secondInstance.accessorTest}\n")
