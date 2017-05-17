@@ -126,6 +126,7 @@ class MySecond
   #----------------------
   #       实例方法
   #----------------------
+  private :helloFunc
   def helloFunc()
     print("hello\n")
     @@staticProperty += 1
@@ -144,3 +145,7 @@ puts("----------------------------------------")
 print("out readerTest: #{secondInstance.readerTest}\n")
 #print("out writerTest: #{secondInstance.writerTest}\n")
 print("out accessorTest: #{secondInstance.accessorTest}\n")
+secondInstance.helloFunc()
+secondInstance.helloFunc()
+print(MySecond.staticProperty)
+puts("")
