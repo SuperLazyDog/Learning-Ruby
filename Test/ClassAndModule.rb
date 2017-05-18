@@ -1,4 +1,8 @@
 #class and modele test file
+
+#2017/05/15 20:00~21:02
+#2017/05/17 2:14~3:20
+#2017/05/18   2:12~3：00
 #-------------------------------------------------------------
 #                           测试一
 #-------------------------------------------------------------
@@ -113,10 +117,12 @@ class MySecond
   attr_reader :readerTest
   attr_writer :writerTest
   attr_accessor :accessorTest
+  attr_reader :hashTest
   #------------------------------------------
   #               初始化函数
   #------------------------------------------
   def initialize
+    @hashTest = {:a => 1, :b => 2}
     @readerTest = @writerTest = @accessorTest = 1
     print("readerTest: #{@readerTest}, writerTest: #{@writerTest}, accessorTest: #{@accessorTest}\n")
   end
@@ -126,7 +132,6 @@ class MySecond
   #----------------------
   #       实例方法
   #----------------------
-  private :helloFunc
   def helloFunc()
     print("hello\n")
     @@staticProperty += 1
@@ -149,3 +154,36 @@ secondInstance.helloFunc()
 secondInstance.helloFunc()
 print(MySecond.staticProperty)
 puts("")
+
+#------------------------------------------
+#               extention
+#------------------------------------------
+class MySecond
+  def extentionTest(value: "OK")
+    puts(value)
+  end
+end
+secondInstance.extentionTest(value: "thanks")
+puts("hashTest: #{secondInstance.hashTest}")
+
+#------------------------------------------
+#               inheritance
+#------------------------------------------
+class MyThree < MyFirst
+  def initialize(value)
+    super(value)
+  end
+
+  def inheritanceTest(value)
+    puts(value)
+  end
+end
+
+inheritanceTest = MyThree.new(54)
+inheritanceTest.inheritanceTest(10)
+inheritanceTest.putsNum()
+inheritanceTest.setNum(value: 108)
+inheritanceTest.putsNum()
+a = 1
+alias :aaaaa :a
+puts("a = #{aaaaa}")
