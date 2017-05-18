@@ -1,8 +1,12 @@
 #class and modele test file
 
-#2017/05/15 20:00~21:02
-#2017/05/17 2:14~3:20
-#2017/05/18   2:12~3：00
+#2017/05/15    20:00~21:02
+#2017/05/17    02:14~03:20
+#2017/05/18    02:12~03:00
+#2017/05/18    13:30~14:34
+
+
+#p148
 #-------------------------------------------------------------
 #                           测试一
 #-------------------------------------------------------------
@@ -184,6 +188,30 @@ inheritanceTest.inheritanceTest(10)
 inheritanceTest.putsNum()
 inheritanceTest.setNum(value: 108)
 inheritanceTest.putsNum()
-a = 1
-alias :aaaaa :a
-puts("a = #{aaaaa}")
+
+#-------------------------------------------------------------
+#                           测试三
+#-------------------------------------------------------------
+module SayHello
+  a = 5
+  @b = 6
+  C = 11
+  def thanks()
+    puts("thanks")
+  end
+  def getResult()
+    @b = 7
+    return @b
+  end
+end
+
+class MyThird
+  include SayHello
+  def initialize
+    @c = SayHello::C
+    puts("@c = #{@c}")
+  end
+end
+
+thirdInstance = MyThird.new()
+puts("a = #{thirdInstance.getResult()}")
