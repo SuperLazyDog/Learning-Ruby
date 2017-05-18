@@ -4,6 +4,7 @@
 #2017/05/17    02:14~03:20
 #2017/05/18    02:12~03:00
 #2017/05/18    13:30~14:34
+#              15:01~
 
 
 #p148
@@ -215,3 +216,15 @@ end
 
 thirdInstance = MyThird.new()
 puts("a = #{thirdInstance.getResult()}")
+puts(MyThird.include?(SayHello))
+print(MyThird.ancestors());puts()
+puts(MyThird.superclass())
+
+module SingletonTest
+  def output()
+    puts("this is singletonTest")
+  end
+end
+
+MyThird.extend(SingletonTest)
+MyThird.output()
