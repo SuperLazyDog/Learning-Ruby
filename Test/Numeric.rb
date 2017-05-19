@@ -91,18 +91,47 @@ printf("0b11111111 << 3  %b\n", 0b11111111 << 3)
 
 
 puts("----------------random------------------")
-r1 = Random.new(1)
+r1 = Random.new()
 p(r1.rand(100))
 p(r1.rand(100))
 p(r1.rand(100))
 p(r1.rand(100))
-r2 = Random.new(1)
+r2 = Random.new()
 p(r2.rand(100))
 p(r2.rand(100))
 p(r2.rand(100))
 p(r2.rand(100))
+require "securerandom"
 
+p(SecureRandom.random_bytes(32))
+p(SecureRandom.base64(32))
+
+puts("-------------------UUID--------------------")
 uuid = UUID.new()
 10.times do
   p(uuid.generate)
+end
+
+puts("-------------------Loop--------------------")
+#times
+5.times() do |count|
+  puts("#{count}: test")
+end
+puts(); puts()
+
+#upto
+5.upto(10) do |count|
+  puts("#{count}: upto test")
+end
+puts();puts()
+
+#downto
+10.downto(5) do |count|
+  puts("#{count}: downto test")
+end
+
+
+#step
+10.step(100, 5) do |count|
+  puts("#{count}: step test")
 end
