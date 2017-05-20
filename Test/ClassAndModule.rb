@@ -242,7 +242,6 @@ class OutStrTest
   def inspect()
     return "thank you"
   end
-
 end
 
 test = OutStrTest.new(value: 12)
