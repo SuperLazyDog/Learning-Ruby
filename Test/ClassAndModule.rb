@@ -227,3 +227,23 @@ end
 
 MyThird.extend(SingletonTest)
 MyThird.output()
+#-------------------------------------------------------------
+#                   测试四   2017/05/20
+#-------------------------------------------------------------
+class OutStrTest
+  @a
+  def initialize(value: 0)
+    @a = value
+  end
+
+  #--------------------------------------------
+  #               构建文字表达
+  #-------------------------------------------
+  def inspect()
+    return "thank you"
+  end
+
+end
+
+test = OutStrTest.new(value: 12)
+p(test)
