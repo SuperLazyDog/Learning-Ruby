@@ -135,3 +135,20 @@ end
 10.step(100, 5) do |count|
   puts("#{count}: step test")
 end
+
+
+puts("-------------------UUID--------------------")
+uuid = UUID.new()
+10.times do
+  p(uuid.generate)
+end
+puts("-------------------UUID--------------------")
+uuid = UUID.new()
+10.times do
+  p(uuid.generate)
+end
+puts("-------------------UUID--------------------")
+uuid = UUID.new()
+10.times do
+  p(uuid.generate)
+end

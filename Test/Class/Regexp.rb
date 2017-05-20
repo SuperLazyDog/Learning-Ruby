@@ -11,7 +11,8 @@
 #2017/05/19    01:50:~03:35
 #2017/05/19    10.10~13：05 p248
 #2017/05/19    14.33~
-#2017/05/20    10:38~
+#2017/05/20    10:38~13:27
+#2017/05/20    17:28~
 
 #p223 誤字　少数
 #p230 誤値
@@ -110,8 +111,137 @@ end
 
 count = 8.1
 print("count: #{count}   ")
-if /^[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*[\+\-\*\/]\s(\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*)\s*[\+\-\*\/\=]\s*[0-9a-zA-Z]+/ =~ "8x^21 + 3x^3 +2x^2-x = 2"
+if /^\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*[\+\-\*\/]\s(\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*)\s*[\+\-\*\/\=]\s*[0-9a-zA-Z]+/ =~ "8x^21 + 3x^5 + 2x^2 - 21x + 4 - a = 2"
   puts(MATCHED)
 else
   puts(DISMATCHED)
 end
+
+count = 8.2
+print("count: #{count}   ")
+if /A.*?B/ =~ "AlkjafdBdalkABsakjA..bB"
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+count = 8.3
+print("count: #{count}   ")
+if /^(\s*[a-zA-Z]+\s*\(\s*[0-9a-zA-Z]+\s*\)\s*[\+\-\*\/\=]\s*)?\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*[\+\-\*\/]\s(\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*)\s*(\s*[\+\-\*\/\=]\s*[0-9a-zA-Z]+)?/ =~ "f(x) = 8x^21 + 3x^5 + 2x^2 - 21x + 4 - a"
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+str = "x^2 + 12317         +X^2 -       Length"
+str = "      x    ^  2  + y                    ^   2   =   2   "
+count = 8.4
+print("count: #{count}   ")
+if /^(\s*[a-zA-Z]+\s*\(\s*[0-9a-zA-Z]+\s*\)\s*[\+\-\*\/\=]\s*)?\s*[0-9a-zA-Z]+\s*\^?\s*[0-9a-zA-Z]*\s*[\+\-\*\/]\s*(\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*)\s*(\s*[\+\-\*\/\=]\s*[0-9a-zA-Z]+)?/ =~ str
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+str = str.gsub(/\s+/, "")
+str = str.gsub(/\+/, " + ")
+str = str.gsub(/\-/, " - ")
+str = str.gsub(/\*/, " * ")
+str = str.gsub(/\//, " \\ ")
+str = str.gsub(/\=/, " = ")
+puts(str)
+
+
+str = "      x    ^  2  + y                    ^   2   =   2   "
+count = 8.41
+print("count: #{count}   ")
+if /^(\s*[a-zA-Z]+\s*\(\s*[0-9a-zA-Z]+\s*\)\s*[\+\-\*\/\=]\s*)?\s*[0-9a-zA-Z]+\s*\^?\s*[0-9a-zA-Z]*\s*[\+\-\*\/]\s*(\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*)\s*(\s*[\+\-\*\/\=]\s*[0-9a-zA-Z]+)?/ =~ str
+  str.gsub!(/\s*/, "")
+  str.gsub!(/[\+\-\*\/\=]/) do |temp|
+    " " + temp + " "
+  end
+  puts(str)
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+
+
+str = "x^2 + 12317         +X^2 -       Length"
+count = 8.5
+print("count: #{count}   ")
+if /^(\s*[a-zA-Z]+\s*\(\s*[0-9a-zA-Z]+\s*\)\s*[\+\-\*\/\=]\s*)?\s*[0-9a-zA-Z]+\s*\^?\s*[0-9a-zA-Z]*\s*[\+\-\*\/]\s*(\s*[0-9a-zA-Z]+\^?[0-9a-zA-Z]*\s*)\s*(\s*[\+\-\*\/\=]\s*[0-9a-zA-Z]+)?/ =~ str
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+count = 9.1
+print("count: #{count}   ")
+str = "ABC"
+if /^(ABC|CBA)/ =~ str
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+count = 9.2
+print("count: #{count}   ")
+str = "ACB"
+if /^(ABC|CBA)/ =~ str
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+count = 9.3
+print("count: #{count}   ")
+str = "CBA"
+if /^(ABC|CBA)/ =~ str
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+
+
+count = 10
+print("count: #{count}   ")
+str = "sasadka\nsjasjk"
+if /\n/ =~ str
+  puts(MATCHED)
+else
+  puts(DISMATCHED)
+end
+
+
+count = 11
+print("count: #{count}   ")
+str = "ajkshdkjckjhksdABCkjdhABCaskjdaasABCkjdaksa"
+if /(ABC).*(ABC)/i =~ str
+  puts(MATCHED)
+  puts($`, $&, $')
+else
+  puts(DISMATCHED)
+end
+
+
+count = 12
+print("count: #{count}   ")
+str = "ajkshdkjckjhksdABCkjdhABCaskjdaasABCkjdaksa"
+if /(ABC).*(ABC)/i =~ str
+  str = str.gsub(/(ABC)/i) do |temp|
+    puts("temp: #{temp}")
+    %Q(SUCCEED #{temp})
+  end
+  puts(str)
+  puts(MATCHED)
+  puts($`, $&, $')
+else
+  puts(DISMATCHED)
+end
+#-------------------------------------------------------------
+#                         Matching
+#-------------------------------------------------------------
+puts(Regexp.quote("abc^^^^edf"))
