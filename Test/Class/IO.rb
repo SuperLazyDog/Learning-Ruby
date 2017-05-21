@@ -20,6 +20,61 @@
 
 #p223 誤字　少数
 #p230 誤値
+
+#-------------------------------------------------------------
+#                         library
+#-------------------------------------------------------------
+#-------------------------------------------------
+#                 close file safely
+#-------------------------------------------------
+#lib
+def closeFileSafely(file)
+  if !file.closed?()
+    file.close()
+  end
+end
+
+def isFileClosed(file)
+  if file.closed?()
+    puts("closed")
+  else
+    puts("wrong: cannot close file")
+  end
+end
+
+#-------------------------------------------------
+#                 show file
+#-------------------------------------------------
+def showFile(file)
+  file.each_line() do |line|
+    printf("%3d: %s", file.lineno, line)
+  end
+end
+
+def showFileWithClose(file)
+  file.each_line() do |line|
+    printf("%3d: %s", file.lineno, line)
+  end
+  closeFileSafely(file)
+end
+
+def showFilebyName(file)
+  file = File.open(file, "r")
+  file.each_line() do |line|
+    printf("%3d: %s", file.lineno, line)
+  end
+end
+
+def showFileWithClosebyName(file)
+  puts("start")
+  file = File.open(file, "r")
+  file.each_line() do |line|
+    printf("%3d: %s", file.lineno, line)
+  end
+  closeFileSafely(file)
+  puts("end")
+end
+#lib over
 #-------------------------------------------------------------
 #                         IO Class
 #-------------------------------------------------------------
@@ -40,17 +95,6 @@ end
 #-------------------------------------------------------------
 #                         File Class
 #-------------------------------------------------------------
-#-------------------------------------------------
-#                 close file safely
-#-------------------------------------------------
-#lib
-def fileCloseSafely(file)
-  if !file.closed?()
-    file.close()
-  end
-end
-#lib over
-
 #creat and  close
 file = File.open("test.txt", "r+")
 file.puts("hello, Weida")
@@ -77,3 +121,35 @@ while line = STDIN.gets()
   count += 1
 end
 #puts("isEnd? #{STDIN.eof?()}")
+
+
+
+file = File.open("test.txt", "r")
+p(file.gets())
+file.close()
+closeFileSafely(file)
+isFileClosed(file)
+
+
+
+puts("---------------------------------------")
+puts("              getc")
+puts("---------------------------------------")
+count = 1
+p("count: #{count}")
+file = File.open("test.txt", "a+")
+file.getc()
+file.ungetc("                SSSSSSSSSSSSSSSSSSSS                     over")
+showFileWithClose(file)
+
+
+
+puts("---------------------------------------")
+puts("              io.write")
+puts("---------------------------------------")
+temp = STDOUT.write("test")
+puts(temp)
+puts("fkjldshkljasdhfads".length)
+str << "a" << "b" << "c"
+File.write("test.txt", str)
+showFileWithClosebyName("test.txt")
