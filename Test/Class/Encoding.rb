@@ -18,6 +18,9 @@
 #2017/05/20    10:38~13:27
 #2017/05/20    17:28~20:03
 
+
+#2017/05/21    11:02~14:27
+#2017/05/21    18：15~
 #p223 誤字　少数
 #p230 誤値
 
@@ -32,13 +35,27 @@ temp = "test".encoding()
 puts("puts: #{temp}")
 print("p: "); p(temp)
 
-
 puts("---------------------------------------")
-puts("            encoding lise1")
+puts("            encoding lise")
 puts("---------------------------------------")
 puts(Encoding.list())
 
 puts("---------------------------------------")
-puts("            encoding lise2")
+puts("          encoding name lise")
 puts("---------------------------------------")
 puts(Encoding.name_list())
+
+
+if /あ/ =~ "あいうえお順"
+  puts("ok")
+else
+  puts("no")
+end
+
+puts("---------------------------------------")
+puts("         internal and external")
+puts("---------------------------------------")
+p("STDIN internal: #{STDIN.internal_encoding}")
+p("STDIN external: #{STDIN.external_encoding}")
+p("STDOUT internal: #{STDOUT.internal_encoding}")
+p("STDOUT external: #{STDOUT.external_encoding}")
