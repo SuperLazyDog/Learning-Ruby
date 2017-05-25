@@ -1,16 +1,21 @@
 class TestController < ApplicationController
-  def 1
+  def t1
+    render plain: "还没出啊兄弟😂"
   end
 
-  def 2
+  def t2
+    render plain: "还没出啊兄弟😂"
   end
 
-  def 3
+  def t3
+    render plain: "还没出啊兄弟😂"
   end
 
-  def 4
+  def t4
+    render plain: "还没出啊兄弟😂"
   end
 
-  def 5
+  def t5
+    render plain: "还没出啊兄弟😂"
   end
 end
