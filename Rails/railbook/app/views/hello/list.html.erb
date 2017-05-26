@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>ISBN code</th>
+    <th>book name</th>
+    <th>price</th>
+    <th>publish</th>
+    <th>published</th>
+    <th>download</th>
+  </tr>
+<% for book in @books %>
+  <tr>
+    <th><%= book.isbn %></th>
+    <th><%= book.title %></th>
+    <th><%= book.price %>yen</th>
+    <th><%= book.publish%></th>
+    <th><%= book.published%></th>
+    <th><%= book.dl%></th>
+  </tr>
+<% end %>
+</table>

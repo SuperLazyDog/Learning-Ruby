@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   get "hello/view"
 
   get "hello/index"
+
+  get "hello/list", to: 'hello#list'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
