@@ -38,7 +38,7 @@
 
 class HelloController < ApplicationController
   def show
-    @msg = "??"
+    @msg = "12"
   end
   def view
     @msg1 = "???????????"

@@ -1,4 +1,6 @@
 class TestController < ApplicationController
+  def show
+  end
   def t1
     render plain: "还没出啊兄弟😂"
   end
