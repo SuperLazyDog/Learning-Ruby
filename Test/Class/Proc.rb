@@ -37,7 +37,6 @@ puts("---------------------------------------")
 ms
   puts("your string is: #{str1}")
 end
-
 myClosure.call("Thank you")
 puts("args count: #{myClosure.arity}")
 puts("location: #{myClosure.source_location}")

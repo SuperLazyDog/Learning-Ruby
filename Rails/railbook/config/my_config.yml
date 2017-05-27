@@ -1,0 +1,15 @@
+COMMON: &COMMON
+  author: "Weida Xu"
+
+
+development:
+  hoge: "dev"
+  <<: *COMMON
+
+test:
+  hoge: "test"
+  <<: *COMMON
+
+production:
+  hoge: "pro"
+  <<: *COMMOM
