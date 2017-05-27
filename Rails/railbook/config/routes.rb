@@ -25,5 +25,7 @@ Rails.application.routes.draw do
 
   get "hello/list", to: 'hello#list'
 
+  get "大神罩我", to: 'hello#view'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

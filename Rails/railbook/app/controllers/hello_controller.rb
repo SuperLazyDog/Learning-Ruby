@@ -26,8 +26,11 @@
  #2017/05/26    3:20~6:10 P43
  #2017/05/26    19:45~20:38
  #2017/05/26    23:02~
- #                     2017/05/26     01:20   P58
+ #                     2017/05/27     01:20   P58
 
+ #2017/05/27    10:00~13:27  P72
+ #              23:55～
+ #                     2017/05/28     02:25 P78
 
  #Ruby
  #p223 誤字　少数
@@ -35,18 +38,18 @@
 
  #Rails5
 
-
 class HelloController < ApplicationController
   def show
     @msg = "12"
   end
   def view
-    @msg1 = "???????????"
-    @msg2 = "html?css????????????"
-    @msg3 = "????????????"
+    @msg1 = "I like ruby"
+    @msg2 = "I know html/css"
+    @msg3 = "I will do my best to learn Ruby on Rails 5"
+    @books = Book.all()
   end
   def index
-    render plain: "?????"
+    render plain: "Do my best"
   end
 
   def list
