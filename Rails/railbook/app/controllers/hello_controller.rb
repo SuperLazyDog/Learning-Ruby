@@ -32,6 +32,8 @@
  #              23:55～
  #                     2017/05/28     02:25 P78
 
+
+ #2017/05/28    12:02~14:33
  #Ruby
  #p223 誤字　少数
  #p230 誤値
@@ -42,17 +44,21 @@ class HelloController < ApplicationController
   def show
     @msg = "12"
   end
+  # OPTIMIZE: 123
   def view
     @msg1 = "I like ruby"
     @msg2 = "I know html/css"
     @msg3 = "I will do my best to learn Ruby on Rails 5"
     @books = Book.all()
   end
+  # FIXME: 123
   def index
     render plain: "Do my best"
   end
 
   def list
+    # TODO: 123
+
     @books = Book.all()
   end
 end
