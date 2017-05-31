@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'view_test/t1'
+
+  get 'view_test/t2'
+  post 'test/t2'#, to: 'test#t2'
+
+  get 'view_test/t3'
+
+  get 'view_test/t4'
+
+  get 'view_test/t5'
+
+  get 'view_test/t6'
+
   resources :fan_comments
   resources :reviews
   resources :authors
