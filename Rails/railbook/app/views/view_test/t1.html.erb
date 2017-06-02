@@ -32,3 +32,27 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<br>
+<br>
+<br>
+<h1> the second test</h1>
+<p> will come soon</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @allBook.each do |book| %>
+    <tr>
+      <th><%= book.title %></th>
+      <th><%= text_field_tag size: 25 %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

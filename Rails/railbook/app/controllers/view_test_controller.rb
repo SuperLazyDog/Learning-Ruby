@@ -1,6 +1,7 @@
 class ViewTestController < ApplicationController
   def t1
-    @book = Book.new
+    @book = Book.new()
+    @allBook = Book.all()
   end
 
   def t2
