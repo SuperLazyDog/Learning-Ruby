@@ -44,14 +44,56 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Text Field</th>
+      <th>Password Field</th>
+      <th>Text Area</th>
+      <th>radio_button 1</th>
+      <th>radio_button 2</th>
+      <th>radio_button 3</th>
+      <th>check_box</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @allBook.each do |book| %>
+    <%# @allBook.each do |book| %>
+    <% for book in @allBook %>
     <tr>
       <th><%= book.title %></th>
       <th><%= text_field_tag size: 25 %></th>
+      <th><%= password_field book, :publish, value: book.price, size:25 %></th>
+      <th><%= text_area book, :publish, value: book.publish, cols:30, rows:8 %></th>
+      <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
+      <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
+      <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
+      <th><%= check_box book, :dl, {class: 'chl'}, 'yes', 'no' %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h2>ラジオボタンの応用例</h2>
+<p>僕ならではのテンプレート</p>
+<table>
+  <thead>
+    <th>項目</th>
+    <th>とてもそう思う   </th>
+    <th>そう思う        </th>
+    <th>そう思わない    </th>
+    <th>とてもそう思わない</th>
+  </thead>
+
+  <tbody>
+    <%# @allQusetionnaire.each do |temp| %>
+    <% for temp in @allQusetionnaire %>
+    <tr>
+      <th><%= temp.question %></th>
+      <th><%= radio_button temp, :veryAgree, '4', class: :veryAgree %></th>
+      <th><%= radio_button temp, :veryAgree, '3', class: :agree %></th>
+      <th><%= radio_button temp, :veryAgree, '2', class: :disagree %></th>
+      <th><%= radio_button temp, :veryAgree, '1', class: :veryDisagree %></th>
     </tr>
     <% end %>
   </tbody>

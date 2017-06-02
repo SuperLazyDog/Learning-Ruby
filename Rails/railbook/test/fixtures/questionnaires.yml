@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+1:
+  question: '学校は勉強のためのところ'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+2:
+  question: '会社は仕事のためのところ'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+3:
+  question: '会社は仕事のためのところ'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+4:
+  question: '僕が太っているんだけど、いい人だ'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+5:
+  question: '学校サボりたい'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+6:
+  question: '出席とる授業が大嫌い'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+7:
+  question: '勉強大好き'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+8:
+  question: '留学したい'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+9:
+  question: '寝たい'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
+
+10:
+  question: '何もしたくない'
+  veryAgree: false
+  agree: false
+  disagree: false
+  veryDisagree: false
