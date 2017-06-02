@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  post 'test/t2'#, to: 'test#t2'
   get 'view_test/t1'
 
   get 'view_test/t2'
-  post 'test/t2'#, to: 'test#t2'
+
 
   get 'view_test/t3'
 

@@ -1,100 +1,289 @@
-<h1>ViewTest#t1</h1>
-<p>Find me in app/views/view_test/t1.html.erb</p>
-<%# p106~107 %>
-<%= form_tag({controller: :test, action: :t2}, id: :mytest, class: :test1) do %>
-  <label for="key">検索キーワード: </label>
-  <%= text_field_tag :key, '', size: 30 %>
-  <%= submit_tag 'search' %>
-<% end %>
+<div class="test1", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h1>ViewTest#t1</h1>
+  <p>Find me in app/views/view_test/t1.html.erb</p>
+  <%# p106~107 %>
+  <%= form_tag({controller: :test, action: :t2}, id: :mytest, class: :test1) do %>
+    <label for="key">検索キーワード: </label>
+    <%= text_field_tag :key, '', size: 30 %><br>
+    <%= submit_tag 'search' %>
+  <% end %>
+
+  <br>
+  <br>
+  <%# p107~108 %>
+  <%= form_tag({controller: :test, action: :t2}) do %>
+    <div class = "field">
+      <%= label :book, :isbn, size:25 %>
+      <%= text_field :book, :isbn, size: 25 %>
+    </div>
+    <div class = "fleld">
+      <%= label :book, :title %><br>
+      <%= text_field :book, :title, size:25 %>
+    </div>
+  <% end %>
+    <%# p109~110 %>
+  <%= form_for(@book) do |form| %>
+    <div class = "form_for_test">
+      <%= form.label :isbn %><br>
+      <%= form.text_field :isbn, size: 25 %>
+    </div>
+
+    <div class = "submit">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  <p style="text-align:center; background-color: orange;">thank you</p>
+</div>
 
 <br>
 <br>
-<%# p107~108 %>
-<%= form_tag({controller: :test, action: :t2}) do %>
-  <div class = "field">
-    <%= label :book, :isbn, size:25 %>
-    <%= text_field :book, :isbn, size: 25 %>
-  </div>
-  <div class = "fleld">
-    <%= label :book, :title %><br>
-    <%= text_field :book, :title, size:25 %>
-  </div>
-<% end %>
+<br>
 
-<%# p109~110 %>
-<%= form_for(@book) do |form| %>
-  <div class = "form_for_test">
-    <%= form.label :isbn %><br>
-    <%= form.text_field :isbn, size: 25 %>
-  </div>
 
-  <div class = "submit">
-    <%= form.submit %>
-  </div>
-<% end %>
+<div class="test2", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h1> the second test</h1>
+  <p> will come soon</p>
+
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Text Field</th>
+        <th>Password Field</th>
+        <th>Text Area</th>
+        <th>radio_button 1</th>
+        <th>radio_button 2</th>
+        <th>radio_button 3</th>
+        <th>check_box</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%# @allBook.each do |book| %>
+      <% for book in @allBook %>
+      <tr>
+        <th><%= book.title %></th>
+        <th><%= text_field_tag size: 25 %></th>
+        <th><%= password_field book, :publish, value: book.price, size:25 %></th>
+        <th><%= text_area book, :publish, value: book.publish, cols:30, rows:8 %></th>
+        <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
+        <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
+        <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
+        <th><label><%= check_box book, :dl, {class: 'chl'}, 'true', 'false'%> label</label></th>
+      </tr>
+      <% end %>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="10" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+
+
+  <h2>ラジオボタンの応用例</h2>
+  <p>僕ならではのテンプレート</p>
+  <table style="width:100%;">
+    <thead>
+      <th>項目</th>
+      <th>とてもそう思う   </th>
+      <th>そう思う        </th>
+      <th>そう思わない    </th>
+      <th>とてもそう思わない</th>
+    </thead>
+
+    <tbody>
+      <%# @allQusetionnaire.each do |temp| %>
+      <% for temp in @allQusetionnaire %>
+      <%# form_for(@allQusetionnaire) do |temp| %>
+      <tr>
+        <th><%= temp.question %></th>
+        <th><%= radio_button temp, :agreement, '4', class: :veryAgree %></th>
+        <th><%= radio_button temp, :agreement, '3', class: :agree %></th>
+        <th><%= radio_button temp, :agreement, '2', class: :disagree %></th>
+        <th><%= radio_button temp, :agreement, '1', class: :veryDisagree %></th>
+      </tr>
+      <% end %>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
 
 
 <br>
 <br>
 <br>
-<h1> the second test</h1>
-<p> will come soon</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Text Field</th>
-      <th>Password Field</th>
-      <th>Text Area</th>
-      <th>radio_button 1</th>
-      <th>radio_button 2</th>
-      <th>radio_button 3</th>
-      <th>check_box</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="test3", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>HTML5対応のビューヘルパー</h2>
+  <p>僕ならではのテンプレート</p>
+  <table style="width:100%;">
+    <thead>
+      <th>項目</th>
+      <th>color</<th>
+    </thead>
 
-  <tbody>
-    <%# @allBook.each do |book| %>
-    <% for book in @allBook %>
-    <tr>
-      <th><%= book.title %></th>
-      <th><%= text_field_tag size: 25 %></th>
-      <th><%= password_field book, :publish, value: book.price, size:25 %></th>
-      <th><%= text_area book, :publish, value: book.publish, cols:30, rows:8 %></th>
-      <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
-      <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
-      <th><%= radio_button book, :publish, 'test', class: :myRadio %></th>
-      <th><%= check_box book, :dl, {class: 'chl'}, 'yes', 'no' %></th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <% for temp in @allQusetionnaire %>
+      <tr>
+        <th><%= temp.question %></th>
+        <th><%= color_field temp, :agreement %></th>
+        <th><%= range_field temp, :agreement, min: 1, max: 4 %></th>
+      </tr>
+      <% end %>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="5" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
 
 
-<h2>ラジオボタンの応用例</h2>
-<p>僕ならではのテンプレート</p>
-<table>
-  <thead>
-    <th>項目</th>
-    <th>とてもそう思う   </th>
-    <th>そう思う        </th>
-    <th>そう思わない    </th>
-    <th>とてもそう思わない</th>
-  </thead>
+<div class="test4", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>P117~ select</h2>
+  <p>僕ならではのテンプレート</p>
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%# @allQusetionnaire.each do |temp| %>
-    <% for temp in @allQusetionnaire %>
-    <tr>
-      <th><%= temp.question %></th>
-      <th><%= radio_button temp, :veryAgree, '4', class: :veryAgree %></th>
-      <th><%= radio_button temp, :veryAgree, '3', class: :agree %></th>
-      <th><%= radio_button temp, :veryAgree, '2', class: :disagree %></th>
-      <th><%= radio_button temp, :veryAgree, '1', class: :veryDisagree %></th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <tr>
+        <th>選択ボックス</th>
+        <th><%= select @allQusetionnaire, :question, ['first', 'second', 'third'], {include_blank: 'test', disabled: ['first'], selected: 'second'}, {multiple: false} %></th>
+        <th>リストボックス</th>
+        <th><%= select @allQusetionnaire, :question, ['first', 'second', 'third'], {include_blank: 'test', disabled: ['first'], selected: 'second'}, {multiple: true, size:5} %></th>
+        <th>select_tag</th>
+        <th><%= select_tag @book, options_for_select({'first' => 1, 'second' => 2, 'third' => 3}, selected: 3), {include_blank: true,  multiple: true} %></th>
+        <th>options_from_collection<br>_for_select</th>
+        <th><%= select_tag @book, options_from_collection_for_select(@allQusetionnaire, :agreement, :question, selected: 2) %></th>
+      </tr>
+
+      <tr>
+        <th>選択ボックス<br>データベースに基づく</th>
+        <th><%= collection_select @allQusetionnaire, :question, @allBook, :price, :title, {include_blank: true}, {} %><th>
+        <th>コレクションボックス<br>データベースの情報に基づく</th>
+        <th><%= collection_select @allQusetionnaire, :question, @allBook, :price, :title, {include_blank: true}, {multiple: true, size: 10} %><th>
+      </tr>
+
+      <tr>
+        <th>選択ボックス<br>選択肢をグループ化</th>
+        <% # TODO: アソシエーションの実装及び選択肢のグループ化 %>
+        <th>調べてみたところ、アソシエーションの実装が必要なので一旦保留<%#= grouped_collection_select @allQusetionnaire, :question, @allAuthor, :books, :name, :id, :title %></th>
+      </tr>
+
+      <tr>
+        <th>datetime_select</th>
+        <th colspan="5"><%= datetime_select @allQusetionnaire, :question %></th>
+      </tr>
+
+      <tr>
+        <th >date_select</th>
+        <th colspan="5"><%= date_select @allQusetionnaire, :question %></th>
+      </tr>
+
+      <tr >
+        <th>time_select</th>
+        <th colspan="5"><%= time_select @allQusetionnaire, :question %></th>
+      </tr>
+
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="8" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+
+<div class="test5", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>P130 raido_buttos and check_boxs</h2>
+  <p>僕ならではのテンプレート</p>
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <th>collection_radio_buttons</th>
+          <th style="text-align:left; background-color: pink;"><%= collection_radio_buttons @book, :dl, @allBook, :price, :title %></th>
+        </tr>
+
+        <tr>
+          <th>collection_check_boxs</th>
+          <th><%= collection_check_boxes @book, :dl, @allBook, :price, :title %></th>
+        </tr>
+
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+<div class="test6", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>P131 other form view helper</h2>
+  <p>僕ならではのテンプレート</p>
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th><%= 'label' %></th>
+        <th><%= label @spBook, :title, 'test' %></th>
+        <th>summit</th>
+        <%= form_with(model: book, local: true) do |form| %>
+        <th><%= form.submit 'update', {disabled: true, confirm: 'ok?', disable_with: '...'}%></th>
+        <% end %>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
