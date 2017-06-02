@@ -1,8 +1,8 @@
 
 # Learning Ruby
 
-This repository is the one which i use to learn how to make program by Ruby.
+This repository is the one which i use to learn how to make program by Ruby and Ruby on Rails 5.
 
-这是我学习Ruby的仓库。
+这是我学习Ruby和Ruby on Rails 5的仓库。
 
-これはRubyを勉強するためのリポジトリです。
+これはRubyとRuby on Rails 5を勉強するためのリポジトリです。
