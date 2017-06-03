@@ -374,9 +374,9 @@
       <tr>
 
         <th><h2 style="color: orange;">cycle</h2></th>
-        <th> <%3.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('brown', 'orange', 'green', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
-        <th> <%6.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('brown', 'orange', 'green', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
-        <th> <%9.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('orange', 'rgb(64,64,64)', 'green', 'brown', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
+        <th><% 3.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('brown', 'orange', 'green', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
+        <th><% 6.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('brown', 'orange', 'green', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
+        <th><% 9.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('orange', 'rgb(64,64,64)', 'green', 'brown', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
       </tr>
       <tr>
         <th><h2 style="color: orange;"> highlight </h2></th>
@@ -387,30 +387,33 @@
 
       <tr>
         <th><h2 style="color: orange;">escape</h2></th>
-        <th><%= %w(a, b, c, d)%></th>
-        <th><%= %></th>'%></th>
+        <th><%= %W(a b c d)%></th>
+        <th><%= sanitize %Q(<th><h2 style="color: orange;"><p style="color: orange;">highlight </p></h2></th>), tags: %w(p), attributes: %w(style) %></th></th>
         <th><%= %></th>
       </tr>
 
       <tr>
-        <th><h2 style="color: orange;"> </h2></th>
-        <th><%= %></th>
-        <th><%= %></th>
-        <th><%= %></th>
-      </tr>
-
-      <tr>
-        <th><h2 style="color: orange;"> </h2></th>
-        <th><%= %></th>
-        <th><%= %></th>
+        <th><h2 style="color: orange;"> sprintf</h2></th>
+        <th><%= sprintf("i am %+s, and have %-05d yen", %Q(SuperLazyDog), 123)%></th>
+        <th><%= sprintf("12345: 4d = %4d, 4.3d = %4.3d, 3.4d = %3.4d", 12345, 12345, 12345)%></th>
         <th><%= %></th>
       </tr>
 
       <tr>
-        <th><h2 style="color: orange;"> </h2></th>
+        <th><h2 style="color: orange;"> number_xxxxx </h2></th>
+        <%# TODO: P150 what is locale? 10.4 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl 数值处理，locale%>
+        <th><%= simple_format %q(number_to_currency) %></th>
+        <th><%= value=(3600*(1.08)).to_i(); number_to_currency value, unit: '¥'%></th>
         <th><%= %></th>
-        <th><%= %></th>
-        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> strtime </h2></th>
+        <%# TODO: P153 国际化对应的日期时间输出，10.4 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl strtime %>
+        <th><%= simple_format 'default Time#to_s' %></th>
+        <th><%= time = Time.now; time.to_s %></th>
+        <th><%= simple_format 'strtime' %></th>
+        <th><%= time.strftime("%Y年%m月%d日") %></th>
       </tr>
 
       <tr>
