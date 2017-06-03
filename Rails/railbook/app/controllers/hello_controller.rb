@@ -50,6 +50,7 @@
  #p230 誤値
   　　　　　　　　　　　　　　　　　　 　#2017/06/03     10:07~13:27
 #2017/06/03     21:58~
+#                     2017/06/04 00:39
  #Rails5
 =end
 class HelloController < ApplicationController
