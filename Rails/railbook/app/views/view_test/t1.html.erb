@@ -64,7 +64,7 @@
       <%# @allBook.each do |book| %>
       <% for book in @allBook %>
       <tr>
-        <th><%= book.title %></th>
+        <th style="background-color:<%= cycle'red', '#FFff99'%>;"><%= book.title %></th>
         <th><%= text_field_tag size: 25 %></th>
         <th><%= password_field book, :publish, value: book.price, size:25 %></th>
         <th><%= text_area book, :publish, value: book.publish, cols:30, rows:8 %></th>
@@ -324,4 +324,144 @@
       </tr>
     </tfoot>
   </table>
+</div>
+
+
+<div class="test8", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>P137 加工系ビューヘルパー</h2>
+  <p>僕ならではのテンプレート</p>
+
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th><h2 style="color: orange;"> simple_format </h2></th>
+        <th><%= simple_format '1111111111111111111', {class: :test, style: :"font-width:bold; font-size: 8px;"}, {sanitize: false, wrapper_tag: 'p'} %></th>
+        <th><%= simple_format "2222222222222222222", {}, {sanitize: false, wrapper_tag: 'blockquote'} %></th>
+        <th><%= simple_format '3333333333333333333' %></th>
+      </tr>
+
+      <tr>
+        <%
+        sample ='444444444444444444444?4444444444444444.444444444444444444?444444444444444444444?44444444444444444444444444444444444444'
+        standard = "Hello, i am you friend, Weida. I like Ruby and Ruby on Rails5"
+        simple = 'test'
+        article1 = truncate sample, {length: 10, omission: '???????'}
+        article2 = truncate sample, {length: 10, omission: '?'}
+        %>
+        <th><h2 style="color: orange;"> truncate </h2></th>
+        <th><%= simple_format article1, {}, {wrapper_tag: 'p'} %></th>
+        <th><%= simple_format article2, {style: :"color: yellow; font-width: bold;"}, {wrapper_tag: 'p'} %></th>
+        <th></th>
+      </tr>
+
+
+      <tr>
+        <th><h2 style="color: orange;">excerpt</h2></th>
+        <th><%= output = excerpt standard, 'Weida', {radius: 5, omission: '😎'} %></th>
+        <th><%= output = excerpt standard, 'Weida', {radius: 8, omission: '😂😂😂😂'} %></th>
+        <th><%= output = excerpt standard, 'Weida', {radius: 10, omission: '👻'} %></th>
+      </tr>
+
+      <tr>
+
+        <th><h2 style="color: orange;">cycle</h2></th>
+        <th> <%3.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('brown', 'orange', 'green', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
+        <th> <%6.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('brown', 'orange', 'green', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
+        <th> <%9.times do %><p  style="background-color: <%= cycle('pink', 'orange', name: 'test1') %>; border-color: <%= cycle('orange', 'rgb(64,64,64)', 'green', 'brown', name: 'test2') %>;border-style: solid; border-width: 3px; margin: 5px;">test</p><% end %></th>
+      </tr>
+      <tr>
+        <th><h2 style="color: orange;"> highlight </h2></th>
+        <th><%= highlight standard, 'e'%></th>
+        <th><%= highlight standard, 'e', highlighter: '<label>\1</label>'%></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;">escape</h2></th>
+        <th><%= %w(a, b, c, d)%></th>
+        <th><%= %></th>'%></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+
+      <tr>
+        <th><h2 style="color: orange;"> </h2></th>
+        <th><%= %></th>
+        <th><%= %></th>
+        <th><%= %></th>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+
+
 </div>

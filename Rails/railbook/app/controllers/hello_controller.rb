@@ -48,7 +48,7 @@
  #Ruby
  #p223 誤字　少数
  #p230 誤値
-
+  　　　　　　　　　　　　　　　　　　 　#2017/06/03     10:07~13:27
  #Rails5
 =end
 class HelloController < ApplicationController
