@@ -257,6 +257,8 @@
 <div class="test6", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
   <h2>P131 other form view helper</h2>
   <p>僕ならではのテンプレート</p>
+  <h3>label, submit, field_for</h3>
+
   <table style="width:100%;">
     <thead>
       <tr>
@@ -282,33 +284,6 @@
 
     <tfoot>
       <tr>
-        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
-
-<div class="test7", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
-  <h2>P131 other form view helper</h2>
-  <p>僕ならではのテンプレート</p>
-  <table style="width:100%;">
-    <thead>
-      <tr>
-        <th>項目</th>
-        <th>例</th>
-        <th>副項目</th>
-        <th>例</th>
-        <th>副項目</th>
-        <th>例</th>
-      </tr>
-    </thead>
-
-    <tbody>
-    </tbody>
-
-    <tfoot>
-      <tr>
         <div style="text-align:center; margin:0 auto;  text-align:center;">
           <ul style="display:inline-block;">
             <li style="float: left; width: 20%; list-style-type: none; background-color: orange; margin-right: 5px;">test1</li>
@@ -327,7 +302,7 @@
 </div>
 
 
-<div class="test8", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+<div class="test7", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
   <h2>P137 加工系ビューヘルパー</h2>
   <p>僕ならではのテンプレート</p>
 
@@ -465,6 +440,124 @@
       </tr>
     </tfoot>
   </table>
+</div>
 
 
+<div class="test8", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>P154 リンク関連のビューヘルパー</h2>
+  <p>僕ならではのテンプレート</p>
+
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <%# TODO: P152 link_to html_opt的remote: 9.5.2 用Ajax处理链接   博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>
+        <th>link_to</th>
+        <th><%= link_to %q(ようこそ、僕のブログ), %q(http://blog.sina.com.cn/lancgg), {style: :"color: black;"}%></th>
+        <th><%= link_to 'sample', {controller: :hello, action: :view}, {method: :post, data: {confirm: 'is OK?'}, style: :"color: red;"} %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <%# TODO: url_for anchor 什么意思 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>
+        <th>url_for</th>
+        <th><%= link_to 'test1_to王者荣耀', url_for(%q(http://pvp.qq.com/)), {data: {confirm: 'are you sure'}, style: :"color: orange;"} %></th>
+        <th><%= url_for controller: :hello, action: :view, trailing_slash: true %></th>
+        <th><%= link_to 'test2', url_for(:back) %></th>
+        <th><%= url_for(:back) %></th>
+        <th></th>
+      </tr>
+      <% for i in 1..3 %>
+      <tr>
+        <th>link_to_if</th>
+        <% # TODO: link_to_if 最后选项&block不可用？ 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl%>
+        <th><%= link_to_if i>2, %q(successfully), url_for(%q(https://github.com)) %></th>
+        <th>link_to_unless_current</th>
+        <% temp = ''
+           str = 'not 3'
+           if i > 2
+             str = 'is 3'
+             temp = %q(https://github.com)
+           end
+        %>
+        <th><%= link_to_unless_current str, temp, {style: :"color: pink;"}%></th>
+        <th><%= mail_to 'jyoitatsu@foxmail.com', 'contact me', {subject: '来自遥远的火星', body: %Q(这是一个网页自动邮箱测试\n请无视), cc: %q(qing97511@akane.waseda.jp)} %></th>
+        <th></th>
+      </tr>
+      <% end %>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
 </div>
