@@ -53,7 +53,7 @@
 #                     2017/06/04 00:39
 #2017/06/04     12:16~13:30
 
-#2017/06/05     00:10~
+#2017/06/05     00:10~01:35
  #Rails5
 =end
 class HelloController < ApplicationController
