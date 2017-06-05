@@ -562,10 +562,9 @@
   </table>
 </div>
 
-
 <div class="test9", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
-  <h2>😳😳😳😳😳😳</h2>
-  <p>😳静静地听歌😳</p>
+  <h2>外部リソースのためのビューヘルパー</h2>
+  <p>僕ならではのテンプレート</p>
 
   <table  style="width:100%;">
     <thead>
@@ -591,8 +590,92 @@
 
       <tr>
         <th>audios_tag</th>
-        <th><%= audio_tag '光良-烟火.mp3', controls: true, autoplay:true, loop: true %></th>
-        <th><%= audio_tag '/薛之谦-演员.mp3', controls: true %></th>
+        <th><%= audio_tag '/光良-烟火.mp3', controls: true, autoplay:false, loop: true %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>video_tag</th>
+        <th><%= video_tag 'http://store.zhiyin.cn/d/file/20141114/rpdUCRVJJafmD/1/mp4/1_1.mp4', controls: true, post: 'test1.jpg'  %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>favicon</th>
+        <th><%#= favicon_link_tag 'favicon.ico'%><%= 'put it into <head>' %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <% #TODO: P164 auto_discovery_link_tag 什么是RSS, Atom? 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="6" style="; text-align:center; background-color: orange;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+<div class="test10", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h2>その他のビューヘルパー</h2>
+  <p>僕ならではのテンプレート</p>
+
+  <table  style="width:100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+        <th>副項目</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th>debuy</th>
+        <th><%= debug(@book) %></th>
+        <th><%= @book.inspect %></th>
+        <%# TODO: p170,171 tag, content_tag 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>my ViewHelper</th>
+        <th><%= form_test test: :'hello, ruby' %></th>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -615,25 +698,6 @@
         <th></th>
         <th></th>
       </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
     </tbody>
 
     <tfoot>
