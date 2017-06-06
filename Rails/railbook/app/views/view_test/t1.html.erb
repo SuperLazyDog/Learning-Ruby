@@ -667,16 +667,16 @@
         <th><%= debug(@book) %></th>
         <th><%= @book.inspect %></th>
         <%# TODO: p170,171 tag, content_tag 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>
-        <th></th>
-        <th></th>
+        <th><%= tag(:p, {})%></th>
+        <th><%= content_tag :p, 'content_tag test'%></th>
         <th></th>
       </tr>
 
       <tr>
         <th>my ViewHelper</th>
         <th><%= form_test test: :'hello, ruby' %></th>
-        <th></th>
-        <th></th>
+        <th><%= form_test test: 1232456 %></th>
+        <th><%= form_test test: [1,2,3,4, '2134', 1.1] %></th>
         <th></th>
         <th></th>
       </tr>
