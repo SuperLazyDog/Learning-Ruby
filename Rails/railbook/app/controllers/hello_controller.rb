@@ -67,6 +67,7 @@
  #Rails5
 =end
 class HelloController < ApplicationController
+  #layout 'test'
   def show
     @msg = "12"
   end
@@ -79,7 +80,12 @@ class HelloController < ApplicationController
   end
   # FIXME: 123
   def index
+    # TODO: render 为什么无法设置每一个方法的模板文件
     render plain: "Do my best"
+  end
+
+  def sample
+    render layout: 'test'
   end
 
   def list
