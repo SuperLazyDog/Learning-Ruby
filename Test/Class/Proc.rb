@@ -34,9 +34,24 @@
 puts("---------------------------------------")
 puts("              Create Proc")
 puts("---------------------------------------")
-ms
+myClosure = Proc.new do |str1|
   puts("your string is: #{str1}")
 end
 myClosure.call("Thank you")
 puts("args count: #{myClosure.arity}")
 puts("location: #{myClosure.source_location}")
+
+def test
+  myClosure = Proc.new do |str1|
+    puts("your string is: #{str1}")
+  end
+  if myClosure
+    puts("begin to test:")
+    myClosure.call('hello, Weida')
+    puts("true")
+  else
+    puts("false")
+  end
+end
+
+test
