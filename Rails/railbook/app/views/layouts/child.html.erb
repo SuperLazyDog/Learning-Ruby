@@ -1,0 +1,20 @@
+<% content_for :test do %>
+<div class="test" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h1>共通レイアウト<br><br><br>ここは:test</h1>
+</div>
+<% end %>
+
+
+<% content_for :content do %>
+<div class="content" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h1> テンプレートのネスト<br><br>ここは:content</h1>
+
+  <div class="child" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
+    <h1> テンプレートのネスト<br><br>ここは:child</h1>
+    <%= yield %>
+  </div>
+  
+</div>
+<% end %>
+
+<%= render template: 'layouts/application' %>

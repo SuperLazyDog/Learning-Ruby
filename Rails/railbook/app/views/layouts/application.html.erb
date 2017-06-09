@@ -11,8 +11,8 @@
 
   <body style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: gray; border-width: 5px; margin : 10px 0px 0px 5px;">
     <h1>start</h1>
+    <!--<img src="/test1.jpg" alt="test">-->
     <%= yield :test %>
-    <h1>contents</h1>
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content):yield %>
   </body>
 </html>

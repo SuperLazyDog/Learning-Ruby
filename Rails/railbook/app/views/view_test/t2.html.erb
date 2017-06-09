@@ -1,2 +1,5 @@
 <h1>ViewTest#t2</h1>
 <p>Find me in app/views/view_test/t2.html.erb</p>
+<%= 'msg is:   ' + @msg %>
+<br><br><br>
+<%= render 'view_test/test', msg: @msg %>

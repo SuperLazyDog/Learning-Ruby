@@ -56,6 +56,7 @@
 #2017/06/05     00:10~01:35
 #2017/06/05     12:38~14:08
 
+
 #2017/06/06     00:03~01:30
 #               01:50~03:03
 
@@ -63,8 +64,8 @@
 #2017/06/07     01:01~01:34 P177
 #               12:04~14:01 P182
 
-
-#2017/06/09     02:01~
+#2017/06/09     02:01~02:21
+  　　　　　　　　　　　　　　　　　　 　#2017/06/09     11:35~
 
  #Rails5
 =end
@@ -82,8 +83,9 @@ class HelloController < ApplicationController
   end
   # FIXME: 123
   def index
-    # TODO: render 为什么无法设置每一个方法的模板文件
+    # !! TODO: render 为什么无法设置每一个方法的模板文件  8FCE81E3-B787-48EE-939A-EA091886F406
     render plain: "Do my best"
+    #render layout: 'test'
   end
 
   def sample
