@@ -2,6 +2,7 @@ class ModelTestController < ApplicationController
   layout 'modelTest'
 
   def t1
+    @model_tests = ModelTest.all
   end
 
   def t2

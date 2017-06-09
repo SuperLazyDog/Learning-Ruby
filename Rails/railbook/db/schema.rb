@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602043353) do
+ActiveRecord::Schema.define(version: 20170609153509) do
 
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
@@ -56,6 +56,19 @@ ActiveRecord::Schema.define(version: 20170602043353) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["memoable_type", "memoable_id"], name: "index_memos_on_memoable_type_and_memoable_id"
+  end
+
+  create_table "model_tests", force: :cascade do |t|
+    t.integer "hp"
+    t.integer "mp"
+    t.integer "ad"
+    t.integer "ap"
+    t.integer "def"
+    t.integer "mdf"
+    t.string "phyle"
+    t.boolean "israre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questionnaires", force: :cascade do |t|
