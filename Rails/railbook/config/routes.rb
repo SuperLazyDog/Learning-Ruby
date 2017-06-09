@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'model_test/t1'
+
+  get 'model_test/t2'
+
+  get 'model_test/t3'
+
+  get 'model_test/t4'
+
+  get 'model_test/t5'
+
+  get 'model_test/t6'
+
+  get 'model_test/t7'
+
+  get 'model_test/t8'
+
+  get 'model_test/t9'
+
+  get 'model_test/t10'
+
+  get 'model_test/t11'
+
+  get 'model_test/t12'
+
+  get 'model_test/t13'
+
+  get 'model_test/t14'
+
   post 'test/t2'#, to: 'test#t2'
   get 'view_test/t1'
 

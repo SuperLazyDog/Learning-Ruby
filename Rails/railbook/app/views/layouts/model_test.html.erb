@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) || Model_Test %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico'%>
+  </head>
+
+  <body style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: gray; border-width: 5px; margin : 10px 0px 0px 5px;">
+    <h1>start</h1>
+    <hr>
+    <!--<img src="/test1.jpg" alt="test">-->
+    <%= yield :test %>
+    <%= content_for?(:content) ? yield(:content):yield %>
+  </body>
+</html>
