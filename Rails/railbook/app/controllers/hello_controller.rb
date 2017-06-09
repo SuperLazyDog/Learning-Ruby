@@ -66,6 +66,7 @@
   　　　　　　　　　　　　　　　　　　 　#2017/06/09     11:35~
 
  #Rails5
+ #P180 間違い    yield(:title) ||   -------------> yield(:title).presence ||
 =end
 class HelloController < ApplicationController
   #layout 'test'

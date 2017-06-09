@@ -1,6 +1,6 @@
 class ModelTestController < ApplicationController
-  layout: 'Model_Test'
-  
+  layout 'modelTest'
+
   def t1
   end
 
