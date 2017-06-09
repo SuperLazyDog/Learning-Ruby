@@ -1,9 +1,9 @@
 <% content_for :test do %>
 <div class="test" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
   <h1>共通レイアウト<br><br><br>ここは:test</h1>
+  <%= render 'view_test/test', msg: @msg %>
 </div>
 <% end %>
-
 
 <% content_for :content do %>
 <div class="content" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: blue red yellow green; border-width: 5px; margin : 10px 0px 0px 5px;">
@@ -13,8 +13,39 @@
     <h1> テンプレートのネスト<br><br>ここは:child</h1>
     <%= yield %>
   </div>
-  
+
 </div>
 <% end %>
 
-<%= render template: 'layouts/application' %>
+<div style="background-color: brown">
+  <%= render template: 'layouts/application' %>
+</div>
+<br><br><br><br>
+
+<%# layout test%>
+<%
+=begin
+<div style="background-color: brown">
+  <%= render template: 'layouts/application' %>
+</div>
+<br><br><br><br>
+
+<div style="background-color: brown">
+  <%= render template: 'layouts/application' %>
+</div>
+<br><br><br><br>
+
+<div style="background-color: brown">
+  <%= render template: 'layouts/application' %>
+</div>
+<br><br><br><br>
+<div style="background-color: brown">
+  <%= render template: 'layouts/application' %>
+</div>
+<br><br><br><br>
+=end%>
+
+<%
+=begin
+ just a test
+=end%>

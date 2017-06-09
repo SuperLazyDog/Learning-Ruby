@@ -1,5 +1,12 @@
-<h1>ViewTest#t2</h1>
-<p>Find me in app/views/view_test/t2.html.erb</p>
-<%= 'msg is:   ' + @msg %>
-<br><br><br>
-<%= render 'view_test/test', msg: @msg %>
+<div style="background-color=red"
+  <% provide :title, 'test' %>
+  <h1>ViewTest#t2</h1>
+  <p>Find me in app/views/view_test/t2.html.erb</p>
+  <%= 'msg is:   ' + @msg %>
+  <br><br><br>
+</div>
+
+
+<%= render partial:'view_test/test', layout: 'withBlueBorder', locals: {msg: @msg} %>
+<%# TODO: p194 学完model后 部分テンプレートとパーシャルレイアウト 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>
+<%# TODO: p198 学完model后 コレクションにパーシャルレイアウトを適用　博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl %>

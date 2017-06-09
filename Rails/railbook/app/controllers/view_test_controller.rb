@@ -23,4 +23,7 @@ class ViewTestController < ApplicationController
 
   def t6
   end
+
+  def t7
+  end
 end

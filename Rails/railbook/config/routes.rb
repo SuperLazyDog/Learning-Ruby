@@ -13,6 +13,16 @@ Rails.application.routes.draw do
 
   get 'view_test/t6'
 
+  get 'view_test/t7'
+
+  get 'view_test/t8'
+
+  get 'view_test/t9'
+
+  get 'view_test/t10'
+
+  get 'view_test/t11'
+  
   resources :fan_comments
   resources :reviews
   resources :authors
