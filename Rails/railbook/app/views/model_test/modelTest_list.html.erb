@@ -1,3 +1,6 @@
+
+<%#= render template: 'layouts/modelTest' %>
+<% provide :title, 'where2' %>
 <div class="table" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: orange; border-width: 5px; margin : 10px 0px 0px 5px;">
   <h3>partial template</h3>
   <table width="100%">
@@ -18,9 +21,9 @@
     </thead>
 
     <tbody>
-    <% if defined?(models) != nil %>
+    <% if defined?(@models) != nil %>
     　<%#= models.instance_of?(Array) %>
-        <% for temp in models %>
+        <% for temp in @models %>
         <tr>
           <th><%= temp.hp %></th>
           <th><%= temp.mp %></th>

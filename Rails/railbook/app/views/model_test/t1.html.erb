@@ -1,8 +1,191 @@
 <% provide :title, 'Start Model Test' %>
 <h1>ModelTest#t1</h1>
 <p>Find me in app/views/model_test/t1.html.erb</p>
+<div class="test1" style="border-style: solid; border-color: pink; border-width: 1px; padding: 10px 0 10px 0; margin: 0 0 10px 0;">
+  <h2>test 1</h2>
+  <%= render 'model_test/itemTable', models: @model_tests %>
+  <%#= render 'model_test/itemTable', models: @model_tests %>
+  <%= render 'model_test/itemTable', models: [@a, @b, @c] %>
+  <%#= render 'model_test/itemtabel', models: @c %>
+  <%= render 'model_test/itemTable', models: @d %>
+</div>
 
+<div class="test2" style="border-style: solid; border-color: pink; border-width: 1px; padding: 10px 0 10px 0; margin: 0 0 10px 0;">
+  <h2>test 2</h2>
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+      </tr>
+    </thead>
 
-<%#= render 'model_test/itemTable', models: @find %>
-<%#= render 'model_test/itemTable', models: @model_tests %>
-<%= render 'model_test/itemTable', models: [@a, @b] %>
+    <tbody>
+      <tr>
+        <th>where</th>
+        <th><%= render 'model_test/itemTable', models: @where_sample1, title: 'where_sample1' %></th>
+        <th><%= render 'model_test/itemTable', models: @where_sample2, title: 'where_sample2' %></th>
+        <th><%= render 'model_test/itemTable', models: @where_sample3, title: 'where_sample3' %></th>
+        <th><%= render 'model_test/itemTable', models: @where_sample4, title: 'where_sample4' %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>where2</th>
+        <th><%= render 'model_test/itemTable', models: @where_sample5, title: 'where_sample5' %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="8" style="text-weight: bold;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

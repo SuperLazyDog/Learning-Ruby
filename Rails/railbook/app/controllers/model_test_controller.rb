@@ -3,12 +3,29 @@ class ModelTestController < ApplicationController
 
   def t1
     @model_tests = ModelTest.all
+    #-------------------------------------------------------------------------
+    #                                test 1
+    #-------------------------------------------------------------------------
     @find = ModelTest.find_by(hp: 3000, hp: 1200)
     @a = ModelTest.find(113629430)
     @b = ModelTest.find(1018350795)
+    @c = ModelTest.find_by(israre: false)
+    @d = ModelTest.find([113629430, 1018350795, 1018350795, 1018350795, 980190962])
+    #-------------------------------------------------------------------------
+    #                                test 2
+    #-------------------------------------------------------------------------
+    @where_sample1 = ModelTest.where(hp: 8000)
+    @where_sample2 = ModelTest.where(hp: 0..4000)
+    @where_sample3 = ModelTest.where(def: [800, 1500, 12, 12, 12])
+    @where_sample4 = ModelTest.where(def: [12])
+    #一般形式
+    #@where_sample5 = ModelTest.where('israre = ? AND def >= ?', false, 1000)
+    @where_sample5 = ModelTest.where('israre = :israre AND def >= :def', :def => 1000, israre: false)
   end
 
   def t2
+    @models = ModelTest.where.not(israre: nil)
+    render 'model_test/modelTest_list'
   end
 
   def t3
