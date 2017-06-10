@@ -3,6 +3,9 @@ class ModelTestController < ApplicationController
 
   def t1
     @model_tests = ModelTest.all
+    @find = ModelTest.find_by(hp: 3000, hp: 1200)
+    @a = ModelTest.find(113629430)
+    @b = ModelTest.find(1018350795)
   end
 
   def t2

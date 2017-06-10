@@ -22,3 +22,10 @@ print("Const: ", defined?(Const));puts()
 print("$global: ", defined?($global));puts()
 print("@instance: ", defined?(@instance));puts()
 print("@@class: ", defined?(@@class));puts()
+
+puts("----------------------------------------")
+puts("                  1.3")
+puts("----------------------------------------")
+sample = []
+print("isArray: ", sample.instance_of?(Array));puts();
+print("class: ", sample.class);puts();
