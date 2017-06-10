@@ -2,3 +2,47 @@
   <h1> this is just a test of partial template</h1>
   <img src="/test1.jpg" alt="test">
 </div>
+<table width="100%">
+  <thead>
+    <tr>
+      <th>HP</th>
+      <th>MP</th>
+      <th>AD</th>
+      <th>AP</th>
+      <th>DEF</th>
+      <th>MDF</th>
+      <th>PHYLE</th>
+      <th>ISRARE</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if !(model_tests.nil?) %>
+    <% for temp in model_tests %>
+    <tr>
+      <th><%= temp.hp %></th>
+      <th><%= temp.mp %></th>
+      <th><%= temp.ad %></th>
+      <th><%= temp.ad %></th>
+      <th><%= temp.def %></th>
+      <th><%= temp.mdf %></th>
+      <th><%= temp.phyle %></th>
+      <th><%= temp.israre %></th>
+    </tr>
+    <% end %>
+  <% else %>
+      <th>-1</th>
+      <th>-1</th>
+      <th>-1</th>
+      <th>-1</th>
+      <th>-1</th>
+      <th>-1</th>
+      <th>-1</th>
+      <th>-1</th>
+  <% end %>
+  </tbody>
+
+  <tfoot>
+  </tfoot>
+
+</table>

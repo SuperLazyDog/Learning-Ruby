@@ -1,36 +1,4 @@
 <% provide :title, 'Start Model Test' %>
 <h1>ModelTest#t1</h1>
 <p>Find me in app/views/model_test/t1.html.erb</p>
-<table>
-  <thead>
-    <tr>
-      <th>HP</th>
-      <th>MP</th>
-      <th>AD</th>
-      <th>AP</th>
-      <th>DEF</th>
-      <th>MDF</th>
-      <th>PHYLE</th>
-      <th>ISRARE</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% for temp in @model_tests %>
-    <tr>
-      <th><%= temp.hp %></th>
-      <th><%= temp.mp %></th>
-      <th><%= temp.ad %></th>
-      <th><%= temp.ad %></th>
-      <th><%= temp.def %></th>
-      <th><%= temp.mdf %></th>
-      <th><%= temp.phyle %></th>
-      <th><%= temp.israre %></th>
-    </tr>
-    <% end %>
-  </tbody>
-
-  <tfoot>
-  </tfoot>
-
-</table>
+<%= render 'model_test/itemTable' %>
