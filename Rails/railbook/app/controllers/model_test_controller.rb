@@ -27,6 +27,14 @@ class ModelTestController < ApplicationController
     @or = ModelTest.where('ap  <= ?', 1000).or(ModelTest.where('def > :def', :def => 4000))
     #@or = ModelTest.where('israre = ?', false).or(ModelTest.where('israre = ?', true))
     #@or = ModelTest.where('mp <= :mp',  mp: 0).or(ModelTest.where('def < :def', :def => 4000))
+    #order
+    @order_asc = ModelTest.all.order(ad: :asc)
+    @order_desc = ModelTest.all.order(ad: :desc)
+    #reorder
+    @reorder_nil = ModelTest.where.not('israre = ?', true).order(:hp => :desc).reorder(nil)#.order(hp: :asc)
+
+    #select
+    @select_hp = ModelTest.where('hp >= ?', 2000).order(hp: :desc).select(:hp, :ad, :israre)
   end
 
   def t2

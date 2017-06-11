@@ -22,14 +22,14 @@
     　<%#= models.instance_of?(Array) %>
         <% for temp in models %>
         <tr>
-          <th><%= temp.hp %></th>
-          <th><%= temp.mp %></th>
-          <th><%= temp.ad %></th>
-          <th><%= temp.ad %></th>
-          <th><%= temp.def %></th>
-          <th><%= temp.mdf %></th>
-          <th><%= temp.phyle %></th>
-          <th><%= temp.israre %></th>
+          <th><%= temp.hp.blank? ? -1 : temp.hp %></th>
+          <th><%= temp.mp.blank? ? -1 : temp.mp %></th>
+          <th><%= temp.ad.blank? ? -1 : temp.ad %></th>
+          <th><%= temp.ap.blank? ? -1 : temp.ap %></th>
+          <th><%= temp.def.blank? ? -1 : temp.def %></th>
+          <th><%= temp.mdf.blank? ? -1 : temp.mdf %></th>
+          <th><%= temp.phyle.blank? ? -1 : temp.phyle %></th>
+          <th><%= (temp.israre.blank? && temp.israre != false) ? -1 : temp.israre %></th>
         </tr>
         <% end %>
     <% else %>

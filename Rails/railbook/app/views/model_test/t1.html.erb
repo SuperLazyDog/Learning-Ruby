@@ -72,30 +72,24 @@
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>order_asc</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @order_asc, title: 'order_asc' %></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>order_desc</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @order_desc, title: 'order_desc' %></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
+        <th>reorder</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @reorder_nil, title: 'reorder_nil' %></th>
+      </tr>
+
+
+      <tr>
+        <th>select</th>
+        <th><%= render 'model_test/partialTable', models: @select_hp, title: 'select', access: [:hp, :ad, :israre] %></th>
         <th></th>
         <th></th>
         <th></th>
