@@ -89,40 +89,22 @@
 
       <tr>
         <th>select</th>
-        <th><%= render 'model_test/partialTable', models: @select_hp, title: 'select', access: [:hp, :ad, :israre] %></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th colspan="7"><%= render 'model_test/partialTable', models: @select_hp, title: 'select', access: [:hp, :ad, :israre] %></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>limit_offset</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @limit_offset, title: 'limit_offset' %></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>first and limit(0)</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @first_limit, title: 'first' %></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
+        <th>group</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @group, title: 'group' %></th>
         <th></th>
         <th></th>
         <th></th>

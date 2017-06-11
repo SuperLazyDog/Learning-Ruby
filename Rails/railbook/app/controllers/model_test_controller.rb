@@ -35,6 +35,14 @@ class ModelTestController < ApplicationController
 
     #select
     @select_hp = ModelTest.where('hp >= ?', 2000).order(hp: :desc).select(:hp, :ad, :israre)
+    #limit/offset
+    @limit_offset = ModelTest.where('hp >= ? AND mp >= ? AND ad >= ?', 1000, 200, 1500).offset(1).limit(1)
+    #first
+    @first = ModelTest.first
+    @first_limit = ModelTest.all.limit(4)
+    #group
+    # TODO: 学习每页表示的数量源代码 P214
+    @group = ModelTest.all.group(:israre)
   end
 
   def t2
