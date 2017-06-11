@@ -49,3 +49,23 @@ five:
   mdf: 1800
   phyle: Human
   israre: false
+
+six:
+  hp: 1234
+  mp: 1235
+  ad: 652
+  ap: 4686
+  def: 5462
+  mdf: 1264
+  phyle: Human
+  israre: true
+
+seven:
+  hp: 5672
+  mp: 1683
+  ad: 9531
+  ap: 8532
+  def: 4331
+  mdf: 800
+  phyle: Human
+  israre: false

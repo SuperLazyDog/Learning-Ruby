@@ -21,6 +21,12 @@ class ModelTestController < ApplicationController
     #一般形式
     #@where_sample5 = ModelTest.where('israre = ? AND def >= ?', false, 1000)
     @where_sample5 = ModelTest.where('israre = :israre AND def >= :def', :def => 1000, israre: false)
+
+    @not = ModelTest.where.not(israre: nil)
+    # TODO:  ap无法顺利搜索?   博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl
+    @or = ModelTest.where('ap  <= ?', 1000).or(ModelTest.where('def > :def', :def => 4000))
+    #@or = ModelTest.where('israre = ?', false).or(ModelTest.where('israre = ?', true))
+    #@or = ModelTest.where('mp <= :mp',  mp: 0).or(ModelTest.where('def < :def', :def => 4000))
   end
 
   def t2
