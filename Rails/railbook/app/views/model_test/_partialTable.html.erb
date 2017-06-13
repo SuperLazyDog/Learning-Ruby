@@ -30,11 +30,33 @@
     <tbody>
     <% if defined?(models) != nil && defined?(access) %>
     　<%#= models.instance_of?(Array) %>
-        <% for temp in models %>
-        <tr>
-          <% if access.instance_of?(Array) %>
-            <% for accTemp in access %>
-              <th><%= case accTemp
+      <% if !models.empty? %>
+          <% for temp in models %>
+          <tr>
+            <% if access.instance_of?(Array) %>
+              <% for accTemp in access %>
+                <th><%= case accTemp
+                          when :hp then
+                            (temp.hp.blank? && temp.hp != false) ? -1 : temp.hp
+                          when :mp then
+                            (temp.mp.blank? && temp.mp != false) ? -1 : temp.mp
+                          when :ad then
+                            (temp.ad.blank? && temp.ad != false) ? -1 : temp.ad
+                          when :ap then
+                            (temp.ap.blank? && temp.ap != false) ? -1 : temp.ap
+                          when :def then
+                            (temp.def.blank? && temp.def != false) ? -1 : temp.def
+                          when :mdf then
+                            (temp.mdf.blank? && temp.mdf != false) ? -1 : temp.mdf
+                          when :phyle then
+                            (temp.phyle.blank? && temp.phyle != false) ? -1 : temp.phyle
+                          when :israre then
+                            (temp.israre.blank? && temp.israre != false) ? -1 : temp.israre
+                          end %>
+                </th>
+               <% end %>
+              <% else %>
+                <th><%= case access
                         when :hp then
                           (temp.hp.blank? && temp.hp != false) ? -1 : temp.hp
                         when :mp then
@@ -52,31 +74,17 @@
                         when :israre then
                           (temp.israre.blank? && temp.israre != false) ? -1 : temp.israre
                         end %>
-              </th>
-             <% end %>
-            <% else %>
-              <th><%= case access
-                      when :hp then
-                        (temp.hp.blank? && temp.hp != false) ? -1 : temp.hp
-                      when :mp then
-                        (temp.mp.blank? && temp.mp != false) ? -1 : temp.mp
-                      when :ad then
-                        (temp.ad.blank? && temp.ad != false) ? -1 : temp.ad
-                      when :ap then
-                        (temp.ap.blank? && temp.ap != false) ? -1 : temp.ap
-                      when :def then
-                        (temp.def.blank? && temp.def != false) ? -1 : temp.def
-                      when :mdf then
-                        (temp.mdf.blank? && temp.mdf != false) ? -1 : temp.mdf
-                      when :phyle then
-                        (temp.phyle.blank? && temp.phyle != false) ? -1 : temp.phyle
-                      when :israre then
-                        (temp.israre.blank? && temp.israre != false) ? -1 : temp.israre
-                      end %>
-              </th>
+                </th>
+              <% end %>
             <% end %>
+          </tr>
+        <% else %>
+          <tr>
+          <% access.size.times do %>
+          <th>none</th>
           <% end %>
-        </tr>
+          </tr>
+        <% end %>
     <% else %>
         <th>-1</th>
         <th>-1</th>

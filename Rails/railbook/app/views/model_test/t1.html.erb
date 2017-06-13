@@ -116,7 +116,7 @@
 
       <tr>
         <th>having</th>
-        <th colspan="7"><%= render 'model_test/itemTable', models: @having, title: 'title' %></th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @having, title: 'having' %></th>
         <th></th>
         <th></th>
         <th></th>
@@ -137,8 +137,8 @@
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
+        <th>none</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @none, title: 'none', access: [:hp, :mp, :ad, :israre] %></th>
         <th></th>
         <th></th>
         <th></th>
