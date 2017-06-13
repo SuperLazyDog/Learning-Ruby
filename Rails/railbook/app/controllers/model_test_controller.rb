@@ -51,11 +51,11 @@ class ModelTestController < ApplicationController
 
     #unscope
     # TODO: p218 unscope 指定where的具体列无效 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl
-    @unscope = ModelTest.where('def <= :def AND israre = :israre', :def => 2000, :israre => false).select(:mp, :mdf).unscope(:select).unscope(where:)
+    @unscope = ModelTest.where('def <= :def AND israre = :israre', :def => 2000, :israre => false).select(:mp, :mdf).unscope(:select).unscope(:where)
     @unscope = ModelTest.where(israre: false).unscope(where: :israre)
 
     #none
-    #@none = ModelTest.where('israre = :israre AND mp >= :mp AND ad < :ad', ad: 7000, mp: 1000, israre: true).none
+    @none = ModelTest.where('israre = :israre AND mp >= :mp AND ad < :ad', ad: 7000, mp: 1000, israre: true).none
   end
 
   def t2
