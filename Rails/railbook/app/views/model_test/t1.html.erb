@@ -105,6 +105,18 @@
       <tr>
         <th>group</th>
         <th colspan="7"><%= render 'model_test/itemTable', models: @group, title: 'group' %></th>
+        <th><% for temp in @group_method_test %>
+              <%= temp.def_average %> <br><<%= temp.mp %> <% end %></th>
+        <th><%= @group_method_test %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>having</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @having, title: 'title' %></th>
         <th></th>
         <th></th>
         <th></th>
@@ -114,19 +126,8 @@
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
+        <th>unscope</th>
+        <th colspan="7"><%= render 'model_test/itemTable', models: @unscope, title: 'unscope' %></th>
         <th></th>
         <th></th>
         <th></th>
