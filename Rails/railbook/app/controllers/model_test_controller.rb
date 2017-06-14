@@ -56,6 +56,17 @@ class ModelTestController < ApplicationController
 
     #none
     @none = ModelTest.where('israre = :israre AND mp >= :mp AND ad < :ad', ad: 7000, mp: 1000, israre: true).none
+
+    #pluck
+    @pluck = ModelTest.all.pluck(:israre, :mp)
+
+    #exists
+    @exists = ModelTest.where('hp < :hp', :hp => 0).exists?
+
+    #named scope
+    @ns_rare = ModelTest.rare
+    @ns_normal = ModelTest.normal
+    @ns_normal_sort_by_hp_desc = ModelTest.unscoped.normal.order_with_hp_desc
   end
 
   def t2

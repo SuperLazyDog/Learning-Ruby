@@ -148,6 +148,171 @@
       </tr>
 
       <tr>
+        <th>pluck</th>
+        <th><%#= render 'model_test/partialTable', models: @pluck, title: 'pluck' %></th>
+        <th><%= @pluck %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>exists</th>
+        <th><%= %q(ModelTest.where('hp < :hp', :hp => 0).exists?) %></th>
+        <th><%= @exists %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th>Named Scope</th>
+        <th><%= render 'model_test/partialTable', models: @ns_rare, title: 'Named Scope rare', access: [:hp, :mp, :def, :israre] %></th>
+        <th><%= render 'model_test/partialTable', models: @ns_normal, title: 'Named Scope normal', access: [:def, :ad, :ap, :israre] %></th>
+        <th><%= render 'model_test/partialTable', models: @ns_normal_sort_by_hp_desc, title: 'Named Scope sort of hp by desc', access: [:hp, :mp, :mdf, :israre] %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
         <th></th>
         <th></th>
         <th></th>
