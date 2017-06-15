@@ -20,7 +20,7 @@
     <tbody>
     <% if defined?(models) != nil %>
     　<%#= models.instance_of?(Array) %>
-      <% if !models.empty? %>
+      <% if models != nil && !models.empty? %>
           <% for temp in models %>
           <tr>
             <th><%= temp.hp.blank? ? -1 : temp.hp %></th>

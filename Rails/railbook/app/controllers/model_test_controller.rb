@@ -86,6 +86,17 @@ class ModelTestController < ApplicationController
     #                         new, save, update, delete
     #---------------------------------------------------------------------------
     @new = ModelTest.new({:hp => 54321, :mp => 12345, israre: false})
+    #update, delete
+
+    #@updateAll_hp5000 = ModelTest.where('hp > ?', 5000).update_all(hp: 5000)
+
+    #transaction
+    ModelTest.transaction do
+      raise 'over'
+    end
+  rescue
+    # TODO: p245 その他の更新系メソッド
+    # TODO: p246~267 検証機能の実装
   end
 
   def t2

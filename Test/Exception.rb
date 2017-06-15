@@ -29,12 +29,13 @@ end
 
 begin
   sample = ExceptionTest.new(value: 12)
+  raise "对不起，这是个error😂 😳 😂 "
 rescue => exception
   p(exception.class)
   p(exception.message)
   p(exception.backtrace)
   sleep 2
-  retry
+  #retry
 ensure
   p("thanks, it's over")
 end
