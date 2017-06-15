@@ -23,7 +23,7 @@ class ModelTestController < ApplicationController
     @where_sample5 = ModelTest.where('israre = :israre AND def >= :def', :def => 1000, israre: false)
 
     @not = ModelTest.where.not(israre: nil)
-    # TODO:  ap无法顺利搜索?   博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl
+    # TODO:  ap无法顺利搜索?   博客 http://blog.sina.com.cn/lancgg
     @or = ModelTest.where('ap  <= ?', 1000).or(ModelTest.where('def > :def', :def => 4000))
     #@or = ModelTest.where('israre = ?', false).or(ModelTest.where('israre = ?', true))
     #@or = ModelTest.where('mp <= :mp',  mp: 0).or(ModelTest.where('def < :def', :def => 4000))
@@ -45,12 +45,14 @@ class ModelTestController < ApplicationController
     @group = ModelTest.all.group(:israre)
 
     @group_method_test = ModelTest.select('hp, mp, ad, AVG(def) AS def_average')
-
+    #20170615 group test
+    @group_byIsrare = ModelTest.all.group(:israre).average(:hp)
+    @group_byIsrare_withNoResult = ModelTest.all.group(:israre)#.average(:hp)
     #having
     @having = ModelTest.all.group(:israre).having('hp >= ?', 0)
 
     #unscope
-    # TODO: p218 unscope 指定where的具体列无效 博客 http://control.blog.sina.com.cn/admin/article/article_edit.php?blog_id=dcb875d90102y6jl
+    # TODO: p218 unscope 指定where的具体列无效 博客 http://blog.sina.com.cn/lancgg
     @unscope = ModelTest.where('def <= :def AND israre = :israre', :def => 2000, :israre => false).select(:mp, :mdf).unscope(:select).unscope(:where)
     @unscope = ModelTest.where(israre: false).unscope(where: :israre)
 
@@ -67,12 +69,30 @@ class ModelTestController < ApplicationController
     @ns_rare = ModelTest.rare
     @ns_normal = ModelTest.normal
     @ns_normal_sort_by_hp_desc = ModelTest.unscoped.normal.order_with_hp_desc
+
+    #count
+    @countOfAll = ModelTest.all.length
+    @countOfRare = ModelTest.where.not(:israre => false).size
+    @countOfNotRare = ModelTest.where(hp: 10000).unscope(:where).where('mp >= :mp', :mp => 5000).
+                      order(:def => :desc).unscoped.where('israre = :israre', israre: false).count
+    @size = 8.size
+
+    #method
+    @averageOfHp = ModelTest.all.average(:hp)
+    @averageOfHp_rare = ModelTest.where(israre: true).average(:hp)
+    @averageOfHp_common = ModelTest.where('israre = ?', false).average(:hp)
+
+    #---------------------------------------------------------------------------
+    #                         new, save, update, delete
+    #---------------------------------------------------------------------------
+    @new = ModelTest.new({:hp => 54321, :mp => 12345, israre: false})
   end
 
   def t2
     @models = ModelTest.where.not(israre: nil)
     render 'model_test/modelTest_list'
   end
+
 
   def t3
   end

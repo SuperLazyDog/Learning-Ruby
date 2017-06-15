@@ -108,8 +108,8 @@
         <th><% for temp in @group_method_test %>
               <%= temp.def_average %> <br><<%= temp.mp %> <% end %></th>
         <th><%= @group_method_test %></th>
-        <th></th>
-        <th></th>
+        <th><%= @group_byIsrare.fetch(false, 'none') %></th>
+        <th><%= @group_byIsrare_withNoResult.average(:hp)[true] %></th>
         <th></th>
         <th></th>
       </tr>
@@ -181,31 +181,58 @@
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>count</th>
+        <th><%= 'countOfAll = ' + @countOfAll.to_s %></th>
+        <th><%= 'countOfRare = ' + @countOfRare.to_s %></th>
+        <th><%= 'countOfNotRare = ' + @countOfNotRare.to_s %></th>
+        <th><%= "8.size = " + @size.to_s %></th>
         <th></th>
         <th></th>
         <th></th>
       </tr>
 
       <tr>
+        <th>average(min,max,sum)</th>
+        <th><%= "averageOfHp = #{@averageOfHp.round}" %></th>
+        <th><%= "averageOfHp_rare = #{@averageOfHp_rare.round}" %></th>
+        <th><%= "averageOfHp_common = #{@averageOfHp_common.round}" %></th>
         <th></th>
         <th></th>
         <th></th>
+        <th></th>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="8" style="text-weight: bold;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="test3" style="border-style: solid; border-color: pink; border-width: 1px; padding: 10px 0 10px 0; margin: 0 0 10px 0;">
+  <h2>test 3</h2>
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th>生成</th>
+        <th><%= render 'model_test/partialTable', models: [@new], title: 'new', access: [:hp, :mp, :israre, :def, :mdf] %></th>
+        <%# TODO:
+        <th><%# form_for @new do |f| %><%#= f.submit %><%# end %></th>
         <th></th>
         <th></th>
         <th></th>

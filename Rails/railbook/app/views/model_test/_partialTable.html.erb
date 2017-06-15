@@ -30,7 +30,7 @@
     <tbody>
     <% if defined?(models) != nil && defined?(access) %>
     　<%#= models.instance_of?(Array) %>
-      <% if !models.empty? %>
+      <% if models != nil && !models.empty? %>
           <% for temp in models %>
           <tr>
             <% if access.instance_of?(Array) %>
