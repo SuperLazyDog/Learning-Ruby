@@ -3,46 +3,185 @@
   <table width="100%">
     <thead>
       <tr>
-        <th colspan="8" style="text-align:center; font-weight: bold; border-color: orange; border-width: 1px; border-style: solid; border-color: orange; border-width: 1px 0 1px 0;"><%= defined?(title) ? title : 'Monster' %></th>
+        <th colspan="8" style="text-align:center; font-weight: bold; border-color: orange; border-width: 1px; border-style: solid; border-color: orange; border-width: 1px 0 1px 0;"><%= defined?(title) ? title+" tableOf_1_2" : 'tableOf_1_2 Association' %></th>
       </tr>
       <tr>
-        <th>HP</th>
-        <th>MP</th>
-        <th>AD</th>
-        <th>AP</th>
-        <th>DEF</th>
-        <th>MDF</th>
-        <th>PHYLE</th>
-        <th>ISRARE</th>
+        <th>modeltest1</th>
+        <th>modeltest1.a</th>
+        <th>modeltest2</th>
+        <th>modeltest2.modeltest1</th>
+        <th>modeltest2.modeltest1.a</th>
+        <th>modeltest2.b</th>
       </tr>
     </thead>
 
     <tbody>
-    <% if defined?(models) != nil %>
+    <% if defined?(model1) != nil && defined?(model2) != nil %>
     　<%#= models.instance_of?(Array) %>
-      <% if models != nil && !models.empty? %>
+      <% if (model1 != nil && !model1.blank?) && (model2 != nil && !model2.blank?) %>
+        <% for models in [model1, model2] %>
           <% for temp in models %>
-          <tr>
-            <th><%= temp.hp.blank? ? -1 : temp.hp %></th>
-            <th><%= temp.mp.blank? ? -1 : temp.mp %></th>
-            <th><%= temp.ad.blank? ? -1 : temp.ad %></th>
-            <th><%= temp.ap.blank? ? -1 : temp.ap %></th>
-            <th><%= temp.def.blank? ? -1 : temp.def %></th>
-            <th><%= temp.mdf.blank? ? -1 : temp.mdf %></th>
-            <th><%= temp.phyle.blank? ? -1 : temp.phyle %></th>
-            <th><%= (temp.israre.blank? && temp.israre != false) ? -1 : temp.israre %></th>
-          </tr>
+            <tr>
+              <th><%= if temp.class == Modeltest1
+                        (temp.blank?) ? nil : temp.class
+                      else
+                        '-'
+                      end %>
+              </th>
+
+              <th><%= if temp.class == Modeltest1
+                         (temp.a.blank? && temp.a != false) ? nil : temp.a
+                      else
+                        '-'
+                      end %>
+              </th>
+
+              <th><%= if temp.class == Modeltest2
+                        (temp.blank?) ? nil : temp.class
+                      else
+                        '-'
+                      end %>
+              </th>
+
+              <th><%= if temp.class == Modeltest2
+                        (temp.modeltest1.blank?) ? nil : temp.modeltest1.class
+                      else
+                        '-'
+                      end %>
+              </th>
+
+              <th><%= if temp.class == Modeltest2
+                        (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a
+                      else
+                        '-'
+                      end %>
+              </th>
+
+              <th><%= if temp.class == Modeltest2
+                        (temp.b.blank? && temp.b != false) ? nil : temp.b
+                      else
+                        '-'
+                      end %>
+              </th>
+            </tr>
+            <% end %>
           <% end %>
         <% else %>
           <tr>
-          <% 8.times do %>
+          <% 6.times do %>
           <th>none</th>
           <% end %>
           </tr>
         <% end %>
+    <% elsif defined?(model1) != nil %>
+      <% if (model1 != nil && !model1.blank?) %>
+        <% for temp in model1 %>
+          <tr>
+            <th><%= if temp.class == Modeltest1
+                      (temp.blank?) ? nil : temp.class
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest1
+                       (temp.a.blank? && temp.a != false) ? nil : temp.a
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.blank?) ? nil : temp.class
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.modeltest1.blank?) ? nil : temp.modeltest1.class
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.b.blank? && temp.b != false) ? nil : temp.b
+                    else
+                      '-'
+                    end %>
+            </th>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+        <% 6.times do %>
+        <th>none</th>
+        <% end %>
+        </tr>
+      <% end %>
+    <% elsif defined?(model2) != nil %>
+      <% if (model2 != nil && !model2.blank?) %>
+        <% for temp in model2 %>
+          <tr>
+            <th><%= if temp.class == Modeltest1
+                      (temp.blank?) ? nil : temp.class
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest1
+                       (temp.a.blank? && temp.a != false) ? nil : temp.a
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.blank?) ? nil : temp.class
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.modeltest1.blank?) ? nil : temp.modeltest1.class
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a
+                    else
+                      '-'
+                    end %>
+            </th>
+
+            <th><%= if temp.class == Modeltest2
+                      (temp.b.blank? && temp.b != false) ? nil : temp.b
+                    else
+                      '-'
+                    end %>
+            </th>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+        <% 6.times do %>
+        <th>none</th>
+        <% end %>
+        </tr>
+      <% end %>
     <% else %>
-        <th>-1</th>
-        <th>-1</th>
         <th>-1</th>
         <th>-1</th>
         <th>-1</th>

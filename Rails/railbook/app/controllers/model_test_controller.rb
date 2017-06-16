@@ -108,6 +108,12 @@ class ModelTestController < ApplicationController
   def t3
     @test1 = Modeltest1.find_by(a: 5)
     @test2 = Modeltest2.find_by(b: 5)
+
+    @all_of_1 = Modeltest1.all.order(:a)
+    @all_of_2 = Modeltest2.all.order(:b)
+
+    #has_many
+    @has_many = Modeltest1.find_by(a: 3)
   end
 
   def t4

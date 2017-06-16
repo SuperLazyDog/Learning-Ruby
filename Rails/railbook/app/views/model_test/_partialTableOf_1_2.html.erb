@@ -3,7 +3,7 @@
   <table width="100%">
     <thead>
       <tr>
-        <th colspan="8" style="text-align:center; font-weight: bold; border-color: orange; border-width: 1px; border-style: solid; border-color: orange; border-width: 1px 0 1px 0;"><%= defined?(title) ? title : 'Monster' %></th>
+        <th colspan="8" style="text-align:center; font-weight: bold; border-color: orange; border-width: 1px; border-style: solid; border-color: orange; border-width: 1px 0 1px 0;"><%= defined?(title) ? title+" partialTableOf_1_2" : 'partialTableOf_1_2 Association' %></th>
       </tr>
       <tr>
         <% if defined?(access1) && defined?(access2) %>
@@ -36,17 +36,41 @@
               <% for accTemp in access1+access2 %>
                 <th><%= case accTemp
                           when :modeltest1 then
-                            (temp.blank?) ? nil : temp if temp.class == Modeltest1
+                            if temp.class == Modeltest1
+                              (temp.blank?) ? nil : temp.class
+                            else
+                              '-'
+                            end
                           when :modeltest1_a then
-                            (temp.a.blank? && temp.a != false) ? nil : temp.a if temp.class == Modeltest1
+                            if temp.class == Modeltest1
+                               (temp.a.blank? && temp.a != false) ? nil : temp.a
+                            else
+                              '-'
+                            end
                           when :modeltest2 then
-                            (temp.blank?) ? nil : temp if temp.class == Modeltest2
+                            if temp.class == Modeltest2
+                              (temp.blank?) ? nil : temp.class
+                            else
+                              '-'
+                            end
                           when :modeltest2_modeltest1 then
-                            (temp.modeltest1.blank?) ? nil : temp.modeltest1 if temp.class == Modeltest2
+                            if temp.class == Modeltest2
+                              (temp.modeltest1.blank?) ? nil : temp.modeltest1.class
+                            else
+                              '-'
+                            end
                           when :modeltest2_modeltest1_a then
-                            (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a if temp.class == Modeltest2
+                            if temp.class == Modeltest2
+                              (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a
+                            else
+                              '-'
+                            end
                           when :modeltest2_b then
-                            (temp.b.blank? && temp.b != false) ? nil : temp.b if temp.class == Modeltest2
+                            if temp.class == Modeltest2
+                              (temp.b.blank? && temp.b != false) ? nil : temp.b
+                            else
+                              '-'
+                            end
                           end %>
                 </th>
                <% end %>

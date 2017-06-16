@@ -14,8 +14,6 @@
         <th>例</th>
         <th>例</th>
         <th>例</th>
-        <th>例</th>
-        <th>例</th>
       </tr>
     </thead>
 
@@ -24,49 +22,33 @@
         <th>test1</th>
         <th><%= @test2.modeltest1.a %></th>
         <th><%= @test1.a %></th>
-        <th><%= render 'model_test/partialTableOf_1_2.html.erb', model1: [@test1], model2: [@test2], access1: [:modeltest1, :modeltest1_a], access2: [:modeltest2, :modeltest2_modeltest1_a] %></th>
-        <th></th>
-        <th></th>
+        <th colspan="4"><%= render 'model_test/partialTableOf_1_2.html.erb', model1: [@test1], model2: [@test2], access1: [:modeltest1, :modeltest1_a], access2: [:modeltest2, :modeltest2_modeltest1, :modeltest2_modeltest1_a, :modeltest2_b ], title: 'belongs_to' %></th>
+      </tr>
+
+      <tr>
+        <th>all of data<br>use partialTableOf_1_2</th>
+        <th colspan="5"><%= render 'model_test/partialTableOf_1_2.html.erb',title: 'alldata', model1: @all_of_1, model2: @all_of_2, access1: [:modeltest1, :modeltest1_a], access2: [:modeltest2, :modeltest2_modeltest1, :modeltest2_modeltest1_a, :modeltest2_b ] %></th>
+      </tr>
+
+      <tr>
+        <th>all of data<br>use tableOf_1_2</th>
+        <th colspan="5"><%= render 'model_test/tableOf_1_2.html.erb',title: 'alldata', model1: @all_of_1, model2: @all_of_2 %></th>
+      </tr>
+
+      <tr>
+        <th>has_many</th>
+        <th><%= @has_many.class %></th>
+        <th><%= @has_many.modeltest2s.blank? ? 'none' : @has_many.modeltest2s[0].class %></th>
+        <th colspan="3"><%= render 'model_test/tableOf_1_2', model1: [@has_many], model2: @has_many.modeltest2s, title: 'has_many' %></th>
+        <%# TODO: p278~279 has_and_belongs_to_many, has_many assoc_id, through: middle_id %>
+        <%# TODO: p280~281 声明关联后自动生成的方法 %>
+        <%# TODO: p280~290 option %>
+        <%# TODO: p290~293 join..., 需要SQL %>
         <th></th>
         <th></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -82,24 +64,9 @@
         <th></th>
         <th></th>
         <th></th>
-        <th></th>
-        <th></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-      <tr>
-        <th></th>
-        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -115,6 +82,13 @@
         <th></th>
         <th></th>
         <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -122,6 +96,40 @@
       <tr>
         <th></th>
         <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
         <th></th>
         <th></th>
         <th></th>
