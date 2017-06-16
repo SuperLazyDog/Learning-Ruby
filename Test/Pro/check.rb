@@ -29,3 +29,23 @@ puts("----------------------------------------")
 sample = []
 print("isArray: ", sample.instance_of?(Array));puts();
 print("class: ", sample.class);puts();
+
+puts("----------------------------------------")
+puts("                  1.4")
+puts("----------------------------------------")
+#2017/06/16
+class Test
+  @a
+  def initialize(num = 0)
+    @a = num
+  end
+
+  def myFunc()
+    puts(@a)
+  end
+end
+sample = Test.new
+p(sample.class)
+p(sample.class.instance_of?(String))
+p(sample.class.instance_of?(Test))
+p(sample.class == Test)

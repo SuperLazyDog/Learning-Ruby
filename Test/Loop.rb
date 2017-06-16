@@ -65,3 +65,11 @@ for i in range do
   end
   puts("now Num: #{i}")
 end
+
+puts("----------------------------------------")
+puts("             多重指定 test")
+#2017/06/16
+a = [1,2,3];b = [4,5,6]
+for i in a+b
+  puts(i)
+end

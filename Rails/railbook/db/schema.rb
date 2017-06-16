@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170609153509) do
+ActiveRecord::Schema.define(version: 20170616055301) do
 
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
@@ -67,6 +67,19 @@ ActiveRecord::Schema.define(version: 20170609153509) do
     t.integer "mdf"
     t.string "phyle"
     t.boolean "israre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "modeltest1s", force: :cascade do |t|
+    t.integer "a"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "modeltest2s", force: :cascade do |t|
+    t.integer "modeltest1_id"
+    t.integer "b"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

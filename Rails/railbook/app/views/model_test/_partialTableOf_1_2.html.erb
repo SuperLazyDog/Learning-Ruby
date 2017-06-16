@@ -1,0 +1,96 @@
+<div class="table" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: orange; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h3>partial template</h3>
+  <table width="100%">
+    <thead>
+      <tr>
+        <th colspan="8" style="text-align:center; font-weight: bold; border-color: orange; border-width: 1px; border-style: solid; border-color: orange; border-width: 1px 0 1px 0;"><%= defined?(title) ? title : 'Monster' %></th>
+      </tr>
+      <tr>
+        <% if defined?(access1) && defined?(access2) %>
+          <% if access1.instance_of?(Array) && access2.instance_of?(Array) %>
+            <% for accTemp in access1+access2 %>
+              <th><%= accTemp.to_s %></th>
+            <% end %>
+          <% else %>
+              <th><%= access.to_s %></th>
+          <% end %>
+        <% else %>
+          <th>modeltest1</th>
+          <th>modeltest1.a</th>
+          <th>modeltest2</th>
+          <th>modeltest2.modeltest1</th>
+          <th>modeltest2.modeltest1.a</th>
+          <th>modeltest2.b</th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% if defined?(model1) != nil && defined?(model2) != nil && defined?(access1) && defined?(access2) %>
+    　<%#= models.instance_of?(Array) %>
+      <% if (model1 != nil && !model1.blank?) && (model2 != nil && !model2.blank?) %>
+        <% for models in [model1, model2] %>
+          <% for temp in models %>
+          <tr>
+            <% if access1.instance_of?(Array) && access2.instance_of?(Array) %>
+              <% for accTemp in access1+access2 %>
+                <th><%= case accTemp
+                          when :modeltest1 then
+                            (temp.blank?) ? nil : temp if temp.class == Modeltest1
+                          when :modeltest1_a then
+                            (temp.a.blank? && temp.a != false) ? nil : temp.a if temp.class == Modeltest1
+                          when :modeltest2 then
+                            (temp.blank?) ? nil : temp if temp.class == Modeltest2
+                          when :modeltest2_modeltest1 then
+                            (temp.modeltest1.blank?) ? nil : temp.modeltest1 if temp.class == Modeltest2
+                          when :modeltest2_modeltest1_a then
+                            (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a if temp.class == Modeltest2
+                          when :modeltest2_b then
+                            (temp.b.blank? && temp.b != false) ? nil : temp.b if temp.class == Modeltest2
+                          end %>
+                </th>
+               <% end %>
+              <% else %>
+                <th><%= case access1
+                          when :modeltest1 then
+                            (temp.blank?) ? nil : temp
+                          when :modeltest1_a then
+                            (temp.a.blank? && temp.a != false) ? nil : temp.a
+                        end %>
+                </th>
+
+                <th><%= case access2
+                          when :modeltest2 then
+                            (temp.blank?) ? nil : temp
+                          when :modeltest2_modeltest1 then
+                            (temp.modeltest1.blank?) ? nil : temp.modeltest1
+                          when :modeltest2_modeltest1_a then
+                            (temp.modeltest1.a.blank? && temp.modeltest1.a != false) ? nil : temp.modeltest1.a
+                          when :modeltest2_b then
+                            (temp.b.blank? && temp.b != false) ? nil : temp.b
+                        end %>
+                </th>
+              <% end %>
+            <% end %>
+          <% end %>
+          </tr>
+        <% else %>
+          <tr>
+          <th>none</th>
+          </tr>
+        <% end %>
+    <% else %>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+    <% end %>
+    </tbody>
+
+    <tfoot>
+    </tfoot>
+
+  </table>
+</div>

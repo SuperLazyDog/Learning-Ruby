@@ -1,2 +1,140 @@
+<% provide :title, 'association test' %>
+<% provide :headTitle, 'association test' %>
 <h1>ModelTest#t3</h1>
 <p>Find me in app/views/model_test/t3.html.erb</p>
+
+<div class="test3" style="border-style: solid; border-color: pink; border-width: 1px; padding: 10px 0 10px 0; margin: 0 0 10px 0;">
+  <h2>test 3</h2>
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+        <th>例</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th>test1</th>
+        <th><%= @test2.modeltest1.a %></th>
+        <th><%= @test1.a %></th>
+        <th><%= render 'model_test/partialTableOf_1_2.html.erb', model1: [@test1], model2: [@test2], access1: [:modeltest1, :modeltest1_a], access2: [:modeltest2, :modeltest2_modeltest1_a] %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="8" style="text-weight: bold;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

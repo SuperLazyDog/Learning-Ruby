@@ -1,0 +1,59 @@
+<div class="table" style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: orange; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h3>partial template</h3>
+  <table width="100%">
+    <thead>
+      <tr>
+        <th colspan="8" style="text-align:center; font-weight: bold; border-color: orange; border-width: 1px; border-style: solid; border-color: orange; border-width: 1px 0 1px 0;"><%= defined?(title) ? title : 'Monster' %></th>
+      </tr>
+      <tr>
+        <th>HP</th>
+        <th>MP</th>
+        <th>AD</th>
+        <th>AP</th>
+        <th>DEF</th>
+        <th>MDF</th>
+        <th>PHYLE</th>
+        <th>ISRARE</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% if defined?(models) != nil %>
+    　<%#= models.instance_of?(Array) %>
+      <% if models != nil && !models.empty? %>
+          <% for temp in models %>
+          <tr>
+            <th><%= temp.hp.blank? ? -1 : temp.hp %></th>
+            <th><%= temp.mp.blank? ? -1 : temp.mp %></th>
+            <th><%= temp.ad.blank? ? -1 : temp.ad %></th>
+            <th><%= temp.ap.blank? ? -1 : temp.ap %></th>
+            <th><%= temp.def.blank? ? -1 : temp.def %></th>
+            <th><%= temp.mdf.blank? ? -1 : temp.mdf %></th>
+            <th><%= temp.phyle.blank? ? -1 : temp.phyle %></th>
+            <th><%= (temp.israre.blank? && temp.israre != false) ? -1 : temp.israre %></th>
+          </tr>
+          <% end %>
+        <% else %>
+          <tr>
+          <% 8.times do %>
+          <th>none</th>
+          <% end %>
+          </tr>
+        <% end %>
+    <% else %>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+        <th>-1</th>
+    <% end %>
+    </tbody>
+
+    <tfoot>
+    </tfoot>
+
+  </table>
+</div>
