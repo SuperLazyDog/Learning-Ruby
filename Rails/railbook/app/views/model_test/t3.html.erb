@@ -50,21 +50,16 @@
 
       <tr>
         <%# TODO: 回调函数p294~297%>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Migration</th>
+        <th colspan="5">type of b: <%= Modeltest2.find_by(b: 5).b.class %></th>
       </tr>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Add TestStr To Modeltest2</th>
+        <th>blank? <%= if defined?(Modeltest2.find_by(b: 5).testStr) then Modeltest2.find_by(b: 5).testStr.blank? end%></th>
+        <th>defined? <%= @temp = Modeltest2.find_by(b: 5).testStr; defined?(@temp) %></th>
+        <th>Test In Modeltest2: <%= Modeltest2.find_by(b: 5).testInModeltest2_File %></th>
+        <th colspan="2">default_valueOf_testStr: <%= Modeltest2.find_by(b: 5).testStr%></th>
       </tr>
 
       <tr>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616055301) do
+ActiveRecord::Schema.define(version: 20170620175535) do
 
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20170616055301) do
     t.integer "b"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "testStr", default: "abcdefg"
+    t.string "testInModeltest2_File"
   end
 
   create_table "questionnaires", force: :cascade do |t|

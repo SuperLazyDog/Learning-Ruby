@@ -7,10 +7,12 @@ class ModelTest < ApplicationRecord
   #default_scope
   #default_scope { order_with_hp }
 
+  #回调函数
+  # TODO: 之前跳过了一部分回调函数的实现 p297
   after_initialize :callBackTest
 
   private
     def callBackTest
-      printf("21345fasfasjfhakl;safjahskflas;:")
+
     end
 end
