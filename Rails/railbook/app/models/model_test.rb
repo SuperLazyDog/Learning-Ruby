@@ -6,4 +6,11 @@ class ModelTest < ApplicationRecord
   scope :order_with_hp_desc, -> { order(:hp => :desc)}
   #default_scope
   #default_scope { order_with_hp }
+
+  after_initialize :callBackTest
+
+  private
+    def callBackTest
+      printf("21345fasfasjfhakl;safjahskflas;:")
+    end
 end
