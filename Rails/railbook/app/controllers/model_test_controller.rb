@@ -106,6 +106,7 @@ class ModelTestController < ApplicationController
 
 
   def t3
+    # TODO: p313~315 升级与回滚
     @test1 = Modeltest1.find_by(a: 5)
     @test2 = Modeltest2.find_by(b: 5)
 
