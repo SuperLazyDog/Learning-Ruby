@@ -34,6 +34,7 @@ puts("----------------------------------------")
 puts("                  1.4")
 puts("----------------------------------------")
 #2017/06/16
+#class, instance_of?
 class Test
   @a
   def initialize(num = 0)
@@ -49,3 +50,32 @@ p(sample.class)
 p(sample.class.instance_of?(String))
 p(sample.class.instance_of?(Test))
 p(sample.class == Test)
+
+puts("----------------------------------------")
+puts("                  1.5")
+puts("----------------------------------------")
+#2017/06/23
+#include?
+puts("array test: ")
+temp = [1,2,3,5]
+print(temp);puts();
+for i in 1...5
+  if temp.include?(i)
+    printf("temp include %d\n", i)
+  else
+    #printf("temp has no member of %d\n", i)
+    puts("temp has no member of #{i}")
+  end
+end
+
+puts("------------")
+puts("hash test: ")
+temp = {:a => 1, :b => 2, :c => 3, :d => 5}
+temp1 = {x: 1, b: 2, c: 5, d: 7}
+temp1.each_key do |item|
+  if temp.include?(item)
+    printf("temp include %s", item.inspect);puts();
+  else
+    puts("temp has no member of #{item}")
+  end
+end
