@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'controller_test/t1'
+
+  get 'controller_test/t2'
+
+  get 'controller_test/t3'
+
+  get 'controller_test/t4'
+
+  get 'controller_test/t5'
+
+  get 'controller_test/t6'
+
+  get 'controller_test/t7'
+
+  get 'controller_test/t8'
+
+  get 'controller_test/t9'
+
+  get 'controller_test/t10'
+
   get 'model_test/t1'
 
   get 'model_test/t2'
