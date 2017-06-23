@@ -48,6 +48,10 @@ Rails.application.routes.draw do
   get 'model_test/t14'
 
   post 'test/t2'#, to: 'test#t2'
+  post 'controller_test/t1'
+  post 'controller_test/t2'
+  post 'controller_test/t3'
+  
   get 'view_test/t1'
 
   get 'view_test/t2'
@@ -70,7 +74,7 @@ Rails.application.routes.draw do
   get 'view_test/t10'
 
   get 'view_test/t11'
-  
+
   resources :fan_comments
   resources :reviews
   resources :authors

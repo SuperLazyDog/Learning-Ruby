@@ -6,7 +6,7 @@ class TestController < ApplicationController
   end
 
   def t2
-    render plain: "还没出啊兄弟😂"
+    #render plain: "还没出啊兄弟😂"
   end
 
   def t3

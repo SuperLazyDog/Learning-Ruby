@@ -1,2 +1,7 @@
 <h1>Test#2</h1>
 <p>Find me in app/views/test/2.html.erb</p>
+
+
+<p>检索的关键词 <%= defined?(params[:key])&&params[:key] != "" ? params[:key] : '没有关键词' %></p>
+<p>class: <%= params[:key].class %></p>
+<p>instance_of: <%= params[:key].instance_of?(String) %></p>

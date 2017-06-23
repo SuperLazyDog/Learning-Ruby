@@ -1,2 +1,112 @@
+<%#-----------------------------------------------------------------------------
+                                   provide
+   -----------------------------------------------------------------------------
+%>
+<% provide :title, 'upfaile test' %>
 <h1>ControllerTest#t2</h1>
 <p>Find me in app/views/controller_test/t2.html.erb</p>
+<div class="test1", style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: orange; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <h1>Updata File</h1>
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>item 1</th>
+        <th>item 2</th>
+        <th>item 3</th>
+        <th>item 4</th>
+        <th>item 5</th>
+        <th>item 6</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td colspan="6" style="text-align:left; padding-left: 15px;">
+          <%= form_tag({controller: :controller_test, action: :t3}, multipart: true) do %>
+            <label>ファイルを選択してください:
+                             <%= file_field_tag :upload, size:50 %></label>
+            <%= submit_tag '提交' %>
+            <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th colspan="8" style="text-weight: bold;">thank you</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

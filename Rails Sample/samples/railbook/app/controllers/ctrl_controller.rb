@@ -41,13 +41,13 @@ class CtrlController < ApplicationController
 
   def upload_process
     file = params[:upfile]
-    name = file.original_filename 
+    name = file.original_filename
     perms = ['.jpg', '.jpeg', '.gif', '.png']
     if !perms.include?(File.extname(name).downcase)
       result = 'アップロードできるのは画像ファイルのみです。'
     elsif file.size > 1.megabyte
       result = 'ファイルサイズは1MBまでです。'
-    else 
+    else
       File.open("public/docs/#{name}", 'wb') { |f| f.write(file.read) }
       result = "#{name}をアップロードしました。"
     end
@@ -70,7 +70,7 @@ class CtrlController < ApplicationController
   def double_render
     @book = Book.find(6)
     if @book.reviews.empty?
-      # render 'simple_info' 
+      # render 'simple_info'
       render 'simple_info' and return
     end
     render 'details_info'
@@ -100,7 +100,7 @@ class CtrlController < ApplicationController
     #send_file 'c:/data/sample.zip'
     #send_file 'c:/data/RIMG1125.jpg', type: 'image/jpeg', disposition: :inline
     send_file 'c:/data/doc931455.pdf', filename: 'Guideline.pdf'
-  end 
+  end
 
   def show_photo
     id = params[:id] ? params[:id] : 1
@@ -139,7 +139,7 @@ class CtrlController < ApplicationController
   def cookie_rec
     cookies[:email] = { value: params[:email],
       expires: 3.months.from_now, http_only: true }
-    
+
     #cookies[:email] = params[:email]
 
     render plain: 'クッキーを保存しました。'
