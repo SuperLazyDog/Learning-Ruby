@@ -78,15 +78,16 @@ ActiveRecord::Schema.define(version: 20161220065943) do
     t.string   "body"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["memoable_type", "memoable_id"], name: "index_memos_on_memoable_type_and_memoable_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "book_id"
     t.integer  "user_id"
-    t.integer  "status"
+    t.integer  "status",     default: 0, null: false
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
