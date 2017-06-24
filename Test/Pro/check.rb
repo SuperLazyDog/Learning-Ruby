@@ -79,3 +79,19 @@ temp1.each_key do |item|
     puts("temp has no member of #{item}")
   end
 end
+
+puts("----------------------------------------")
+puts("                  1.6")
+puts("----------------------------------------")
+#2017/06/24
+#f.write
+STDOUT.write("write test\n")
+STDOUT.write("successfully!!!😊 \n\n")
+STDOUT.write("😂 😳 😂 \n")
+str = ""
+while str!= "quit\n"
+  str = STDIN.gets
+  puts("your str is :#{str}")
+end
+
+puts("over")

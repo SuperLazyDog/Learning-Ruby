@@ -81,6 +81,16 @@
       <tr>
         <th>Update Files</th>
         <td><%= link_to 'file upload test', {controller: :controller_test, action: :t2} %></td>
+        <td>拓展名测试</td>
+        <td><%= File.extname('无敌的测试.无敌.adb.撒：asd:sa/as~wq|1.sa.admin').downcase %></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <%# TODO: p346~347发送文件%>
+        <th>send file</th>
+        <td><%= link_to 'download', {action: :t7},  {data: {confirm: 'ダウンロードしてよろしいでしょうか？'}, style: :""}%></td>
         <td></td>
         <td></td>
         <td></td>
@@ -88,7 +98,137 @@
       </tr>
 
       <tr>
-        <%# TODO: p346~347发送文件%>
+        <th>render xml:...</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <%# TODO: p359~362 atom输出，csv%>
+      <%= form_tag(url_for(action: :t2)) do %>
+        <%# TODO: 完善view document 表格部分%>
+        <th><label>emails</label><%= text_field_tag :email, @email %><br><%= submit_tag '提交' %></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+
+      <tr>
+        <%# TODO: p373, set session %>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
         <th></th>
         <td></td>
         <td></td>

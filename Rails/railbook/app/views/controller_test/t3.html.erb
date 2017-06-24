@@ -3,3 +3,6 @@
 
 <h2>begin test</h2>
 <p><%= @result %></P>
+<% unless @uploaded %>
+<p><%= link_to 'retry', {action: :t2} %></p>
+<% end %>
