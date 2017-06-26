@@ -1,0 +1,44 @@
+<%
+=begin
+<h1>Login#t1</h1>
+<p>Find me in app/views/login/t1.html.erb</p>
+=end
+%>
+
+<p style="color: red;"><%= @result %></p>
+<%= form_tag action: :t2 do %>
+  <div class="login-form">
+    <div class="username">
+      <%= label :username, '用户名' %>
+      <%= text_field_tag :username, '', size: 15 %>
+    </dib>
+
+    <div class="password">
+      <%= label :password, '密码' %>
+      <%= text_field_tag :password, '', size: 15 %>
+    </dib>
+  </div>
+
+  <%= hidden_field_tag :referer, flash[:referer] %>
+  <br><%= submit_tag '登陆' %>
+</div>
+<% end %>
+
+
+<%= form_tag action: :t3 do %>
+  <div class="login-form">
+    <div class="username">
+      <%= label :username, '用户名' %>
+      <%= text_field_tag :username, '', size: 15 %>
+    </dib>
+
+    <div class="password">
+      <%= label :password, '密码' %>
+      <%= text_field_tag :password, '', size: 15 %>
+    </dib>
+  </div>
+
+  <%= hidden_field_tag :referer, flash[:referer] %>
+  <br><%= submit_tag '注册' %>
+</div>
+<% end %>

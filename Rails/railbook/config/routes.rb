@@ -1,4 +1,27 @@
 Rails.application.routes.draw do
+  get 'login', to: 'login#t1'
+  get 'login/t1'
+
+  get 'login/t2'
+  post 'login/t2'
+
+  get 'login/t3'
+  post 'login/t3'
+
+  get 'login/t4'
+
+  get 'login/t5'
+
+  get 'login/t6'
+
+  get 'login/t7'
+
+  get 'login/t8'
+
+  get 'login/t9'
+
+  get 'login/t10'
+
   get 'controller_test/t1'
 
   get 'controller_test/t2'
@@ -51,7 +74,7 @@ Rails.application.routes.draw do
   post 'controller_test/t1'
   post 'controller_test/t2'
   post 'controller_test/t3'
-  
+
   get 'view_test/t1'
 
   get 'view_test/t2'

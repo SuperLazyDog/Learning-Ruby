@@ -1,0 +1,11 @@
+<h1>Login#t2</h1>
+<p>Find me in app/views/login/t2.html.erb</p>
+
+<p>username: <%= @username %></P>
+<p>password: <%= @password %></p>
+<p>referer: <%= @referer %></p>
+<p>user: <%= @user %></p>
+<p style="color:Green;font-weight:bold;"><%= @result %></p>
+<% if @result == "登录失败😭 " %>
+<%= link_to '再登录', action: :t1 %>
+<% end %>

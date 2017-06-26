@@ -1,0 +1,11 @@
+<h1>Login#t3</h1>
+<p>Find me in app/views/login/t3.html.erb</p>
+<p>username: <%= @username %></P>
+<p>password: <%= @password %></p>
+<p>referer: <%= @referer %></p>
+<p>user: <%= @user %></p>
+<p>userhash: <%= BCrypt::Password.create(@password) %></p>
+<p style="color:Green;font-weight:bold;"><%= @result %></p>
+<% if @result == "注册失败😭 " %>
+<%= link_to '再注册', action: :t1 %>
+<% end %>

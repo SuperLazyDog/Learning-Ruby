@@ -1,4 +1,6 @@
 class ControllerTestController < ApplicationController
+  #before_action :authenticate_digest,:check_login, only: [:t1]
+  before_action :check_login, only: [:t1]
   def t1
     @headers = request.headers
     @email = defined?(cookies[:email]) ? cookies[:email] : ''
@@ -85,6 +87,34 @@ class ControllerTestController < ApplicationController
   end
 
   def t10
+    render plain: 'hello'
     #head 500
+
   end
+
+  private
+    #最基本的认证方法
+    def authenticate_basic
+      name = %q(XuWeida)
+      passwd = %q(jyoitatsu1234AA)
+
+      authenticate_or_request_with_http_basic("test") do |n, p|
+        return name == n && passwd == p
+      end
+    end
+
+    #稍微安全一些的安全方法
+    def authenticate_digest
+      name = %q(XuWeida)
+      passwd = %q(jyoitatsu1234AA)
+      auth = { name => passwd}
+      authenticate_or_request_with_http_digest("test1") do |name|
+        auth[name]
+      end
+    end
+
+    def check_login
+
+    end
+
 end

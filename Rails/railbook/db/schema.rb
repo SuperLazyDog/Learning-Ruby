@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620175535) do
+ActiveRecord::Schema.define(version: 20170626185533) do
 
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20170620175535) do
     t.string "name"
     t.text "body"
     t.boolean "deleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logins", force: :cascade do |t|
+    t.string "user"
+    t.string "password_digest"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,6 +119,13 @@ ActiveRecord::Schema.define(version: 20170620175535) do
     t.boolean "dm"
     t.string "roles"
     t.integer "reviews_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users_samples", force: :cascade do |t|
+    t.string "userName"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
