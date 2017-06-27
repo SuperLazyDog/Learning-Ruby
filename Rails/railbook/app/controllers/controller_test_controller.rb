@@ -77,13 +77,14 @@ class ControllerTestController < ApplicationController
   end
 
   def t8
-    num = 100
-    render plain: %Q(<div style="color:Red;">test #{num}</div>)
+    #num = 100
+    #render plain: %Q(<div style="color:Red;">test #{num}</div>)
   end
 
   def t9
-    num = 100
-    render html: %Q(<div style="color:Red;">test #{num}</div>).html_safe
+    #num = 100
+    redirect_to ({controller: :controller_test, action: :t8}), test_flash: 'just a test'
+    #render html: %Q(<div style="color:Red;">test #{num}</div>).html_safe
   end
 
   def t10

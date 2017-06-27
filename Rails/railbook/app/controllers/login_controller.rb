@@ -1,6 +1,8 @@
 class LoginController < ApplicationController
   #预处理，检查
-  before_action :login
+  #before_action :login
+  include Login
+
   def t1  #登陆
 
   end
@@ -18,7 +20,7 @@ class LoginController < ApplicationController
       #保存登录状态
       reset_session
       session[:user] = @user.password_digest
-      # TODO: 登录状态 session, flash
+      # TODO: 登录状态 session, flash p386~389
     else
       #render plain: 'NO'
       @result = "登录失败😭 "
@@ -63,9 +65,10 @@ class LoginController < ApplicationController
 
   def t10
   end
-
+=begin
   private
     def login
 
     end
+=end
 end
