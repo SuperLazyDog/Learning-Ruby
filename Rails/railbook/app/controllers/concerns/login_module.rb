@@ -1,5 +1,4 @@
-module Login
-
+module LoginModule
   extend ActiveSupport::Concern
 
   included do

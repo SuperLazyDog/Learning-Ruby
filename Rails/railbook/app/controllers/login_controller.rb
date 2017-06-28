@@ -1,7 +1,7 @@
 class LoginController < ApplicationController
   #预处理，检查
   #before_action :login
-  include Login
+  include LoginModule
 
   def t1  #登陆
 
@@ -68,7 +68,7 @@ class LoginController < ApplicationController
 =begin
   private
     def login
-
+      render plain: 'test'
     end
 =end
 end
