@@ -118,7 +118,7 @@
 --------------------------------------------
 #P180 間違い    yield(:title) ||   -------------> yield(:title).presence ||
 #p399 before_filter -------------> before_action   Rails3までの書き方を破棄しよう
-
+#p318   db/seed.rb -------------> db/seeds.rb
 
 =end
 class HelloController < ApplicationController
