@@ -16,7 +16,8 @@ class LoginController < ApplicationController
       #render plain: 'OK'
       @result = "登录成功😊 "
       @headers = request.headers
-      render template: 'controller_test/t1'
+      #render template: 'controller_test/t1'
+      redirect_to ({controller: 'controller_test', action: 't1'})
       #保存登录状态
       reset_session
       session[:user] = @user.password_digest
