@@ -23,3 +23,6 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+
+# 注意： 用户名密码写在.env文件里面

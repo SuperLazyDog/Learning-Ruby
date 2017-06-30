@@ -1,6 +1,5 @@
 module LoginModule
   extend ActiveSupport::Concern
-
   included do
     before_action :login
   end
