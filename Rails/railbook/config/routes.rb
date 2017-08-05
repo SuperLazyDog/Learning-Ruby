@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'scraping_test/t1'
+
+  get 'scraping_test/t2'
+
+  get 'scraping_test/t3'
+
+  get 'scraping_test/t4'
+
+  get 'scraping_test/t5'
+
+  get 'scraping_test/t6'
+
+  get 'scraping_test/t7'
+
+  get 'scraping_test/t8'
+
+  get 'scraping_test/t9'
+
+  get 'scraping_test/t10'
+
   #scope :test do
     get 'login', to: 'login#t1'
     get 'login/t1'
