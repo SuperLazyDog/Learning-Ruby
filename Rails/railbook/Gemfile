@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 2017/06/24 enable the format of XML
 gem 'activemodel-serializers-xml'
 gem 'bcrypt', '~>3.1.7'
+
+# 2017/08/05 scraping
+gem 'mechanize'
