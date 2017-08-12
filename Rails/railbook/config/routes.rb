@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'google_map_test/t1'
+
+  get 'google_map_test/t2'
+
+  get 'google_map_test/t3'
+
+  get 'google_map_test/t4'
+
+  get 'google_map_test/t5'
+
+  get 'google_map_test/t6'
+
+  get 'google_map_test/t7'
+
+  get 'google_map_test/t8'
+
+  get 'google_map_test/t9'
+
+  get 'google_map_test/t10'
+
   get 'scraping_test/t1'
 
   get 'scraping_test/t2'

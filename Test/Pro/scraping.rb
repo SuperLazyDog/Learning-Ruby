@@ -2,7 +2,7 @@
 #                拉取数据
 #----------------------------------------------
 require 'mechanize'
-
+=begin
 agent = Mechanize.new
 agent.user_agent_alias = 'Mac Firefox'
 page = agent.get('http://localhost:3000/scraping_test/t1')
@@ -40,6 +40,7 @@ for ele in elements
   text = '😱 ' << text
   puts text
 end
+=end
 
 puts('----------------------------------------------')
 puts('                  测试 ')
@@ -93,6 +94,16 @@ store_access_map_page = agent.get(store_access_map_link)
 store_access_map = store_access_map_page.at('#mapbox')
 puts store_access_map
 
+
+
+store_homepage_link = store_page.at('/html/body/div[1]/div[3]/aside/div/div[2]/section/div/button')[:onclick]
+puts(store_homepage_link)
+#window.open('http://www.tanpopodome.net/'); _rad9.push(['conversion', 'hp']);shopLog.detailbu('CU5888240238','110187012','B11','');
+#str.index("'); _rad9.")
+firstIndex = store_link.index('http:')
+lastIndex = store_link.index("'); _rad9.push")
+store_link = store_link[firstIndex..lastIndex-1]
+puts store_link
 
 #------------------------------------------------------------------
 =begin                      店舗情報の例
