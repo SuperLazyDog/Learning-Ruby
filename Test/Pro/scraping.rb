@@ -59,10 +59,10 @@ page = agent.get('http://www.carsensor.net/usedcar/detail/CU5888240238/index.htm
 #block = page.search('/html/body/div[1]/div[4]/div/div[2]/div[1]')
 #puts block
 link = page.at('body > div.page > div:nth-child(8) > div > div.column__sub > div.sideBoxWrap--primary > div.sideBoxWrap__contents > div.shopInfo > h3 > a')
-puts link
-puts link[:href]
+#puts link
+#puts link[:href]
 store_page = agent.get(link[:href])
-puts store_page.body
+#puts store_page.body
 #・店名
 store_name = store_page.at('/html/body/div[1]/div[3]/aside/div/div[2]/section/h2')
 puts '店名：' << store_name
@@ -71,6 +71,7 @@ store_image = store_page.at('/html/body/div[1]/div[3]/aside/div/div[1]/a/img')
 store_image_link = store_image[:src]
 store_image_link[0..1] = ""
 #puts store_image[:src]
+#ccsrpcma.carsensor.net/shopinfo/images/110/187/012/main.jpg
 puts '写真：' << store_image_link
 #・住所
 store_adress = store_page.at('/html/body/div[1]/div[3]/aside/div/div[2]/section/dl/dd[2]').inner_text
@@ -105,6 +106,17 @@ lastIndex = store_homepage_link.index("'); _rad9.push")
 store_homepage_link = store_homepage_link[firstIndex..lastIndex-1]
 puts store_homepage_link
 
+#新写真
+#store_large_image = store_page.at('/html/body/div[1]/div[3]/aside/div/div[1]/a')
+#store_large_image_link = store_large_image[:'data-popup']
+#store_large_image_link = store_large_image_link.delete(%q({"url":"/))
+#store_large_image_link = store_large_image_link.delete(%q(,name_bank,width1024,height900}))
+#puts(store_large_image_link)
+puts store_image_link
+length = store_image_link.length
+store_image_link[length-8, length-1] = %q(Lmain.jpg)
+puts store_image_link
+#ccsrpcma.carsensor.net/shopinfo/images/110/187/012/main.jpg
 #------------------------------------------------------------------
 =begin                      店舗情報の例
 #------------------------------------------------------------------
