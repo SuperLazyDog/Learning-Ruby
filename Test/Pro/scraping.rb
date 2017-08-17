@@ -100,10 +100,10 @@ store_homepage_link = store_page.at('/html/body/div[1]/div[3]/aside/div/div[2]/s
 puts(store_homepage_link)
 #window.open('http://www.tanpopodome.net/'); _rad9.push(['conversion', 'hp']);shopLog.detailbu('CU5888240238','110187012','B11','');
 #str.index("'); _rad9.")
-firstIndex = store_link.index('http:')
-lastIndex = store_link.index("'); _rad9.push")
-store_link = store_link[firstIndex..lastIndex-1]
-puts store_link
+firstIndex = store_homepage_link.index('http:')
+lastIndex = store_homepage_link.index("'); _rad9.push")
+store_homepage_link = store_homepage_link[firstIndex..lastIndex-1]
+puts store_homepage_link
 
 #------------------------------------------------------------------
 =begin                      店舗情報の例
