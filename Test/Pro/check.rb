@@ -11,8 +11,8 @@ puts("asa#{asa}")
 print("defined?: ", defined? asa);puts()
 print("nil?: ", asa.nil?);puts()
 print("empty?: ", asa.empty?);puts()
-#print("blank?: ");print(asa.blank?);puts()
-#print("presence?: ");print(asa.presence?);puts()
+#print("blank?: ");print(asa.blank?);puts() //Rails 可用
+#print("presence?: ");print(asa.presence?);puts() //Rails 可用
 puts("----------------------------------------")
 puts("                  1.2")
 puts("----------------------------------------")

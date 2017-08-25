@@ -63,7 +63,7 @@ Rails.application.routes.draw do
 
     get 'login/t10'
   #end
-  
+
   get 'controller_test/t1'
 
   get 'controller_test/t2'
