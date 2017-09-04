@@ -1,2 +1,10 @@
 <h1>ViewTest#t4</h1>
 <p>Find me in app/views/view_test/t4.html.erb</p>
+
+<% if defined?(params[:check_box_tag_test]) != nil && params[:check_box_tag_test] != nil  %>
+1212
+  <%= params[:check_box_tag_test] %>
+<% else %>
+2121
+  <%= '错误' %>
+<% end %>

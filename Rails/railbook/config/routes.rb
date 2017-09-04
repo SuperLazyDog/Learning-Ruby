@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :devise do
+    get 'user/t1'
+    get 'user/t2'
+    get 'user/t3'
+    get 'user/t4'
+    get 'user/t5'
+    get 'user/t6'
+    get 'user/t7'
+    get 'user/t8'
+    get 'user/t9'
+  end
+
   get 'google_map_test/t1'
 
   get 'google_map_test/t2'
@@ -125,6 +137,7 @@ Rails.application.routes.draw do
   get 'view_test/t3'
 
   get 'view_test/t4'
+  post 'view_test/t4'
 
   get 'view_test/t5'
 

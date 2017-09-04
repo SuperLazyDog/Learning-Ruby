@@ -1,2 +1,9 @@
 <h1>ViewTest#t3</h1>
 <p>Find me in app/views/view_test/t3.html.erb</p>
+
+<% form = form_tag({controller: :view_test, action: :t4}) do %>
+  <labe><%= check_box_tag 'check_box_tag_test', "提交啦啦啦啦啦啦啦😂", false, {} %>是不是逗比</label><br>
+  <%= submit_tag '提交咯?', {disabled: false, data: {confirm: 'OK', disable_with: '...'}} %>
+<% end %>
+
+<%= form %>
