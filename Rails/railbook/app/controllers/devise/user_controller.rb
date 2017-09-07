@@ -1,5 +1,5 @@
 class Devise::UserController < ApplicationController
-  
+  before_action :authenticate_devise_user!
   def t1
   end
 
