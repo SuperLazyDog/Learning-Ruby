@@ -8,14 +8,15 @@
     <%= favicon_link_tag '/public.jpg'%>
   </head>
 
-  <body style="text-align:center; margin:0 auto; background-color: gray; border-style: solid; border-color: gray; border-width: 5px; margin : 10px 0px 0px 5px;">
+  <body>
     <h1>start</h1>
     <hr>
     <!--<img src="/test1.jpg" alt="test">-->
     <%= yield :test %>
     <%= content_for?(:content) ? yield(:content):yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- devise的错误展示区域 -->
+    <%= render partial: 'devise_error_area' %>
+    <!-- 提供地图 -->
     <%= render partial: 'application/javascript/provideMap' %>
   </body>
 </html>
