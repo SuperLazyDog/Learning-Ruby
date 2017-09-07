@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :devise_users
   namespace :devise do
     get 'user/t1'
     get 'user/t2'

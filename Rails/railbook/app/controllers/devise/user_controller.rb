@@ -1,4 +1,5 @@
 class Devise::UserController < ApplicationController
+  
   def t1
   end
 
