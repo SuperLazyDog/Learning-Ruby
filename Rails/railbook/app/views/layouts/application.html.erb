@@ -3,7 +3,6 @@
   <head>
     <title><%= yield(:title).presence || 'Railbook' %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag '/public.jpg'%>
@@ -17,6 +16,6 @@
     <%= content_for?(:content) ? yield(:content):yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render partial: 'provideMap' %>
+    <%= render partial: 'application/javascript/provideMap' %>
   </body>
 </html>
