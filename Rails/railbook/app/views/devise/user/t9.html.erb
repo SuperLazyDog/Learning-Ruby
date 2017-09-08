@@ -2,3 +2,8 @@
 <p>Find me in app/views/devise/user/t9.html.erb</p>
 
 <%= t 'devise.test.test' %>
+
+
+<% if devise_user_signed_in? %>
+  <p><%= link_to "ログアウト", destroy_devise_user_session_path, method: :delete %></p>
+<% end %>
