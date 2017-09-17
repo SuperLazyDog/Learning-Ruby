@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'ajax_test/t1'
+
+  get 'ajax_test/t2'
+
+  get 'ajax_test/t3'
+
+  get 'ajax_test/t4'
+
+  get 'ajax_test/t5'
+
+  get 'ajax_test/t6'
+
+  get 'ajax_test/t7'
+
+  get 'ajax_test/t8'
+
+  get 'ajax_test/t9'
+
+  get 'ajax_test/t10'
+
   namespace :devise do
     get 'user/t1'
     get 'user/t2'
