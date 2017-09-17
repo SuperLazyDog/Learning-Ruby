@@ -14,7 +14,7 @@ class AjaxController < ApplicationController
     sleep(2)
     @books = Book.where(publish: params[:publish])
   end
-  
+
 
   def slideshow
     api_key = 'xxxxxxxx'

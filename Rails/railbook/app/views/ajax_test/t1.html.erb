@@ -1,2 +1,8 @@
 <h1>AjaxTest#t1</h1>
 <p>Find me in app/views/ajax_test/t1.html.erb</p>
+
+<div>现在时间: <%= Time.now %></div>
+<div id="result">现在时间: <%= Time.now %></div>
+<%= link_to '刷新', {action: :t2}, remote: true %>
+
+<%# TODO: 书上关于ajax的坑补充到博客 %>

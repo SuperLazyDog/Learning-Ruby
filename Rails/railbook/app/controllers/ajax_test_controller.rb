@@ -1,8 +1,10 @@
 class AjaxTestController < ApplicationController
   def t1
+    @time = Time.now.to_s
   end
 
   def t2
+    @time = Time.now.to_s
   end
 
   def t3
