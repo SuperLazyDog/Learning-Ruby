@@ -1,0 +1,12 @@
+<% provide :default, "ture" %>
+
+<h1>Questionnaire#t1</h1>
+<p>Find me in app/views/questionnaire/t1.html.erb</p>
+<div class="questionnaire">
+  <%= form_tag({controller: :questionnaire, action: :t2}, id: :mytest, class: :test1) do %>
+    <label for="key">検索キーワード: </label>
+    <%= text_field_tag :key, '', size: 30 %><br>
+    <%= submit_tag 'search' %>
+  <% end %>
+  <label><%= check_box_tag :sample %>some thing</label>
+</div>

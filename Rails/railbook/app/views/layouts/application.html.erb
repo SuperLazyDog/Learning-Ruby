@@ -8,7 +8,7 @@
     <%= favicon_link_tag '/public.jpg'%>
   </head>
 
-  <body>
+  <body <%= %q(class=default) if yield(:default).presence %>>
     <h1>start</h1>
     <hr>
     <!--<img src="/test1.jpg" alt="test">-->

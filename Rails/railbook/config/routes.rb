@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'questionnaire/t1'
+
+  get 'questionnaire/t2'
+
+  get 'questionnaire/t3'
+
+  get 'questionnaire/t4'
+
+  get 'questionnaire/t5'
+
+  get 'questionnaire/t6'
+
+  get 'questionnaire/t7'
+
+  get 'questionnaire/t8'
+
+  get 'questionnaire/t9'
+
+  get 'questionnaire/t10'
+
   namespace :devise do
     get 'user/t1'
     get 'user/t2'
