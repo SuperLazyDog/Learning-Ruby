@@ -62,3 +62,6 @@ gem 'mechanize'
 
 # 2017/09/07 sign up and login
 gem 'devise'
+
+### デバッグ出力の整形
+gem 'awesome_print', :group => [:development, :test]
