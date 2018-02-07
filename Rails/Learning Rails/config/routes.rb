@@ -188,6 +188,7 @@ Rails.application.routes.draw do
   get "大神罩我", to: 'hello#view'
 
 
-  root to: 'devise/user#t1'
+  # root to: 'devise/user#t1'
+  root to: 'view_test#t1'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
