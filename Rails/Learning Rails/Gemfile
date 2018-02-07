@@ -68,3 +68,6 @@ gem 'awesome_print', :group => [:development, :test]
 
 #2017/12/02 环境设定 .env
 gem 'dotenv-rails'
+
+#2018/02/07 jQuery
+gem "jquery-rails"
