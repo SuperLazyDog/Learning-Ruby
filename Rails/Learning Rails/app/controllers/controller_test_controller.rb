@@ -94,8 +94,16 @@ class ControllerTestController < ApplicationController
   end
 
   def cookie_test
+    puts %Q(UUID start test) # TODO: 2018/03/15 完成session测试
+    if session[:sample_20180315].present?
+      puts %Q(UUID sample_20180315 exist: #{session[:sample_20180315]})
+    else
+      session[:sample_20180315] = "[session seted]"
+      puts %Q(UUID sample_20180315 created: #{session[:sample_20180315]})
+    end
+    puts %Q(UUID finish test)
   end
-  
+
   private
     #最基本的认证方法
     def authenticate_basic
@@ -118,7 +126,6 @@ class ControllerTestController < ApplicationController
     end
 
     def check_login
-
     end
 
 end
