@@ -1,6 +1,7 @@
 class ControllerTestController < ApplicationController
   #before_action :authenticate_digest,:check_login, only: [:t1]
   before_action :check_login, only: [:t1]
+  include SampleModule
   def t1
     @headers = request.headers
     @email = defined?(cookies[:email]) ? cookies[:email] : ''
@@ -102,6 +103,7 @@ class ControllerTestController < ApplicationController
       puts %Q(UUID sample_20180315 created: #{session[:sample_20180315]})
     end
     puts %Q(UUID finish test)
+    runner
   end
 
   private
