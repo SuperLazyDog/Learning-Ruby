@@ -96,6 +96,8 @@ Rails.application.routes.draw do
 
   get 'controller_test/t10'
 
+  get 'controller_test/cookie_test'
+
   get 'model_test/t1'
 
   get 'model_test/t2'

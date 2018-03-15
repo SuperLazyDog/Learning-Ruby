@@ -93,6 +93,9 @@ class ControllerTestController < ApplicationController
 
   end
 
+  def cookie_test
+  end
+  
   private
     #最基本的认证方法
     def authenticate_basic
