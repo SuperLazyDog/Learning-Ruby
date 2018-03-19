@@ -103,7 +103,7 @@ class ControllerTestController < ApplicationController
       puts %Q(UUID sample_20180315 created: #{session[:sample_20180315]})
     end
     puts %Q(UUID finish test)
-    runner
+    runner # 2018/03/15 SampleModule test
   end
 
   private
