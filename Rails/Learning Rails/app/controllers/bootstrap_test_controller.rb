@@ -1,5 +1,5 @@
 class BootstrapTestController < ApplicationController
-  def t1
+  def t1 # popover 弹出框
   end
 
   def t2
