@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'bootstrap_test/t1'
+
+  get 'bootstrap_test/t2'
+
+  get 'bootstrap_test/t3'
+
+  get 'bootstrap_test/t4'
+
+  get 'bootstrap_test/t5'
+
+  get 'bootstrap_test/t6'
+
+  get 'bootstrap_test/t7'
+
+  get 'bootstrap_test/t8'
+
+  get 'bootstrap_test/t9'
+
+  get 'bootstrap_test/t10'
+
   namespace :devise do
     get 'user/t1'
     get 'user/t2'
