@@ -71,3 +71,7 @@ gem 'dotenv-rails'
 
 #2018/02/07 jQuery
 gem "jquery-rails"
+
+#2018/03/24 bootstrap
+# gem 'sass-rails', '~> 5.0' # 已经有了
+gem 'bootstrap-sass'
