@@ -1,4 +1,44 @@
 Rails.application.routes.draw do
+  namespace :pro do
+    get 'decorator_test/t1'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t2'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t3'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t4'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t5'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t6'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t7'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t8'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t9'
+  end
+
+  namespace :pro do
+    get 'decorator_test/t10'
+  end
+
   get 'bootstrap_test/t1'
 
   get 'bootstrap_test/t2'

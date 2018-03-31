@@ -1,0 +1,2 @@
+module Pro::DecoratorTestHelper
+end
