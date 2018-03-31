@@ -78,3 +78,11 @@ gem 'bootstrap-sass'
 
 # 2018/03/31 把model的列数据写入model文件
 gem 'annotate'
+
+# 2018/03/31 console的输出改用pry (默认的irb太难看)
+group :development,:test do
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+end
