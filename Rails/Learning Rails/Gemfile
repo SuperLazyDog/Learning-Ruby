@@ -86,3 +86,6 @@ group :development,:test do
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
 end
+
+# 2018/03/31 整合model和view的中间逻辑
+gem 'active_decorator'
