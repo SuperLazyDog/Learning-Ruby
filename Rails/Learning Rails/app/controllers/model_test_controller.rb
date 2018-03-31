@@ -6,7 +6,7 @@ class ModelTestController < ApplicationController
     #-------------------------------------------------------------------------
     #                                test 1
     #-------------------------------------------------------------------------
-    @find = ModelTest.find_by(hp: 3000, hp: 1200)
+    @find = ModelTest.find_by(hp: 3000)
     @a = ModelTest.find(113629430)
     @b = ModelTest.find(1018350795)
     @c = ModelTest.find_by(israre: false)

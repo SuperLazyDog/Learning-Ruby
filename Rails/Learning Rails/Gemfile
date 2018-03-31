@@ -75,3 +75,7 @@ gem "jquery-rails"
 #2018/03/24 bootstrap
 # gem 'sass-rails', '~> 5.0' # 已经有了
 gem 'bootstrap-sass'
+
+
+# 2018/03/31 把model的列数据写入model文件
+gem 'annotate'

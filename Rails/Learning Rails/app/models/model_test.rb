@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: model_tests
+#
+#  id         :integer          not null, primary key
+#  hp         :integer
+#  mp         :integer
+#  ad         :integer
+#  ap         :integer
+#  def        :integer
+#  mdf        :integer
+#  phyle      :string
+#  israre     :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class ModelTest < ApplicationRecord
   scope :rare, -> { where('israre = :israre', israre: true) }
   #scope :normal, -> { where('israre = :israre', israre: false) }
