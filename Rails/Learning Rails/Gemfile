@@ -89,3 +89,7 @@ end
 
 # 2018/03/31 整合model和view的中间逻辑
 gem 'active_decorator'
+
+# 2018/04/18 rails console 表格输出 model
+gem 'hirb'         # 出力結果を表として出力するgem
+gem 'hirb-unicode'  # マルチバイト文字の表示を補正するgem
