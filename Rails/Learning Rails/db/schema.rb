@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331073514) do
+ActiveRecord::Schema.define(version: 20180421153458) do
 
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
@@ -105,6 +105,24 @@ ActiveRecord::Schema.define(version: 20180331073514) do
     t.integer "agreement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ransack_basics", force: :cascade do |t|
+    t.boolean "column_A", default: false, null: false
+    t.boolean "column_B", default: false, null: false
+    t.boolean "column_C", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ransack_children", force: :cascade do |t|
+    t.integer "ransack_basic_id"
+    t.boolean "column_A", default: false, null: false
+    t.boolean "column_B", default: false, null: false
+    t.boolean "column_C", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ransack_basic_id"], name: "index_ransack_children_on_ransack_basic_id"
   end
 
   create_table "reviews", force: :cascade do |t|

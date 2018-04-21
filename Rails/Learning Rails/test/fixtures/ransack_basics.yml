@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: ransack_basics
+#
+#  id         :integer          not null, primary key
+#  column_A   :boolean          default(FALSE), not null
+#  column_B   :boolean          default(FALSE), not null
+#  column_C   :boolean          default(FALSE), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+<% puts "creating ransack_basics" %>
+<% 0.upto(20) do |n| %>
+<% result = false %>
+ransack_basic_<%=n%>:
+  id: <%= n %>
+  column_A: <%= !result %>
+  column_B: <%= result %>
+  column_C: <%= !result %>
+  <% result = !result %>
+<% end %>
