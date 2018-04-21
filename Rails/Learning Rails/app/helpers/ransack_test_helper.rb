@@ -1,0 +1,2 @@
+module RansackTestHelper
+end

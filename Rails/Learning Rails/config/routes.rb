@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'ransack_test/t1'
+
+  get 'ransack_test/t2'
+
+  get 'ransack_test/t3'
+
+  get 'ransack_test/t4'
+
+  get 'ransack_test/t5'
+
+  get 'ransack_test/t6'
+
+  get 'ransack_test/t7'
+
+  get 'ransack_test/t8'
+
+  get 'ransack_test/t9'
+
+  get 'ransack_test/t10'
+
   namespace :pro do
     get 'decorator_test/t1'
   end
