@@ -48,17 +48,14 @@ class DataOperater
       # target = data[:target_function].to_s
       target = data.delete(:target_function).to_s
       definition_count = data.delete(:definition_count).to_i
-      stack = []
-      stack += data[main.to_sym]
-      while !data.empty?
-        break stack.empty?
-        stack += data.delete stack.last.to_sym # ここが問題、修正する時間がないけど
-      end
+      queue = []
+      queue += data[main.to_sym]
+      puts "queue: #{queue}"
       count = 0
-      stack.each do |func|
-        if target.to_s == func.to_s
-          count += 1
-        end
+      while !queue.empty?
+        now_function = queue.shift
+        count += 1 if now_function == target
+        queue = data[now_function.to_sym] + queue if !data[now_function.to_sym].nil?
       end
       @result.push format_output i, count
     end
