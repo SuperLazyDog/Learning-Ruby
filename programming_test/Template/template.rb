@@ -6,10 +6,16 @@ class DataOperater
       datas: []
     }
     @result = []
-
   end
+
+  # デフォルトデータ生成のデバッグ
+  def initialize_debug
+    puts "initialized @result: #{@result}"
+  end
+
   #　データの初期化
   def initialize_data
+    # ファイルによるデータ初期化
     File.open('sample_data_of_A.txt') do |file|
       case_temp = []
       is_new_case = true
@@ -37,6 +43,10 @@ class DataOperater
       end
     end
     self.data_initialize_debug # TODO: delete here
+
+    # stdinによるデータ初期化
+    # @data.push $stdin.gets
+    # self.data_initialize_debug # TODO: delete here
   end
   #　データの初期化のデバッグ
   def data_initialize_debug
