@@ -1,7 +1,7 @@
 class DataOperater
   attr_accessor :data, :result
   def initialize
-    @data = { # {test_count:   datas: [{user_location: store_count: stores:[{x, y}]}
+    @datas = { # {test_count:   datas: [{user_location: store_count: stores:[{x, y}]}
       test_count: 0,
       datas: []
     }
@@ -21,7 +21,7 @@ class DataOperater
       is_new_case = true
       file.each_line.with_index(1) do |line, i|
         temp_line = line.chomp
-        @data[:test_count] = temp_line.to_s if i == 1
+        @datas[:test_count] = temp_line.to_s if i == 1
         if i>2
           if temp_line == ""
             is_new_case = true
@@ -29,14 +29,14 @@ class DataOperater
           end
           datas = temp_line.split(' ')
           if is_new_case
-            @data[:datas].push({ user_location: { x: datas[0].to_i, y: datas[1].to_i } })
+            @datas[:datas].push({ user_location: { x: datas[0].to_i, y: datas[1].to_i } })
             is_new_case = false
           else
             if datas.count == 1
-              @data[:datas].last[:store_count] = datas[0].to_i
+              @datas[:datas].last[:store_count] = datas[0].to_i
             else
-              @data[:datas].last[:stores] = [] if @data[:datas].last[:stores].nil?
-              @data[:datas].last[:stores].push({ x: datas[0].to_i, y: datas[1].to_i })
+              @datas[:datas].last[:stores] = [] if @datas[:datas].last[:stores].nil?
+              @datas[:datas].last[:stores].push({ x: datas[0].to_i, y: datas[1].to_i })
             end
           end
         end
@@ -45,17 +45,17 @@ class DataOperater
     self.data_initialize_debug # TODO: delete here
 
     # stdinによるデータ初期化
-    # @data.push $stdin.gets
+    # @datas.push $stdin.gets
     # self.data_initialize_debug # TODO: delete here
   end
   #　データの初期化のデバッグ
   def data_initialize_debug
-    puts "@data: #{@data}"
+    puts "@datas: #{@datas}"
   end
 
   #　出力のための処理
   def processer
-    @data[:datas].each.with_index do |data, i|
+    @datas[:datas].each.with_index do |data, i|
       user_location = data[:user_location]
       distances = []
       data[:stores].each do |store_location|
