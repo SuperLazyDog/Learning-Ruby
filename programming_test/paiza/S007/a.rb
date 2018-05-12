@@ -7,27 +7,27 @@ class DataOperater
 
   # デフォルトデータ生成のデバッグ
   def initialize_debug
-    puts "initialized @result: #{@result}"
+    # puts "initialized @result: #{@result}"
   end
   #　データの初期化
   def initialize_data
     # ファイルによるデータ初期化
-    File.open('sample_data_of_A.txt') do |file|
-      case_temp = []
-      is_new_case = true
-      file.each_line do |line|
-        @datas.push line.chomp
-      end
-    end
-    self.data_initialize_debug # TODO: delete here
-
-    # stdinによるデータ初期化
-    # @datas.push $stdin.gets
+    # File.open('sample_data_of_A.txt') do |file|
+    #   case_temp = []
+    #   is_new_case = true
+    #   file.each_line do |line|
+    #     @datas.push line.chomp
+    #   end
+    # end
     # self.data_initialize_debug # TODO: delete here
+
+    stdinによるデータ初期化
+    @datas.push $stdin.gets
+    self.data_initialize_debug # TODO: delete here
   end
   #　データの初期化のデバッグ
   def data_initialize_debug
-    puts "@datas: #{@datas}"
+    # puts "@datas: #{@datas}"
   end
 
   #　出力のための処理
@@ -94,7 +94,7 @@ class DataOperater
 
   # 演算単位の配列から計算
   def count_letters(operater_temp, result_temp)
-    puts "operater_temp: #{operater_temp}"
+    # puts "operater_temp: #{operater_temp}"
     letters = ('a'..'z').to_a
     numbers = (0..9).to_a
     numbers_strs = ('0'..'9').to_a
@@ -125,9 +125,9 @@ class DataOperater
           when 0
             # result_temp[item] += coefficient
             result_temp[item] += current[level.to_s][0]
-            # puts "current[#{level.to_s}]: #{current[level.to_s][0]}"
-            puts "current: #{current}"
-            puts "result_temp[#{item}]: #{result_temp[item]}, coefficient: #{coefficient}"
+            # # puts "current[#{level.to_s}]: #{current[level.to_s][0]}"
+            # puts "current: #{current}"
+            # puts "result_temp[#{item}]: #{result_temp[item]}, coefficient: #{coefficient}"
           when 1
             coefficient *= item.to_i
             current[level.to_s][0] *= item.to_i
@@ -151,7 +151,7 @@ class DataOperater
       elsif flag == 1
         coefficient *= item.to_i
       end
-      puts "item: #{item}, coefficient: #{coefficient}"
+      # puts "item: #{item}, coefficient: #{coefficient}"
     end
     # while !operater_temp.empty?
     #   item = operater_temp.shift
@@ -160,7 +160,7 @@ class DataOperater
     #   else
     #   end
     # end
-    puts "result_temp: #{result_temp}"
+    # puts "result_temp: #{result_temp}"
   end
 
   def format_output(alpha, count)
