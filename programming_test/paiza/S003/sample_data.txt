@@ -1,0 +1,4 @@
+5 3
+1 said 3 was an honest person.
+2 said 3 was a liar.
+5 said 4 was an honest person.
