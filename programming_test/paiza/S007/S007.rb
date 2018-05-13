@@ -115,43 +115,46 @@ class DataOperater
       flag =  get_flag.call item  # 0: letter, 1: number, 2: ( 3: )
       if flag == 2 # (...)の処理
         level = 1
-        current = {}
-        current[level.to_s] = [coefficient, 1] if current[level.to_s].nil?
+        number_queue = []
+        level_index = []
         while level > 0 # 絶対キューの範囲内なので、emptyチェックなしで
           item = operater_temp.shift
           flag =  get_flag.call item
-          current[level.to_s] = [coefficient, 1] if current[level.to_s].nil?
           case flag
-          when 0
-            # result_temp[item] += coefficient
-            result_temp[item] += current[level.to_s][0]
-            # puts "current[#{level.to_s}]: #{current[level.to_s][0]}"
-            puts "current: #{current}"
-            puts "result_temp[#{item}]: #{result_temp[item]}, coefficient: #{coefficient}"
-          when 1
-            coefficient *= item.to_i
-            current[level.to_s][0] *= item.to_i
-            current[level.to_s][1] = item.to_i
-          when 2
+          when 0 # letter
+            puts "level_index[#{level}]: #{level_index[level]}"
+            result_temp[item] += coefficient
+            coefficient = coefficient/level_index[level] unless level_index[level].nil?
+            level_index.delete_at level
+          when 1 # number
+            item_num = item.to_i
+            level_index[level] = item_num
+            number_queue.push item_num
+            coefficient *= item_num
+          when 2 # (
             level += 1
-          when 3
-            # current[(level-1).to_s][0] = current[level.to_s][0]/current[level.to_s][1] unless current[(level-1).to_s].nil?
-            current.delete level.to_s
+            # 12 (
+          when 3 # )
+            coefficient /= level_index[level-1] unless level_index[level-1].nil?
             level -= 1
+            level_index.delete_at level
           end
-          # puts "current: #{current}"
+          puts "--------------------------------------"
+          puts "level: #{level}"
+          puts "item: #{item}"
+          puts "result_temp[#{item}]: #{result_temp[item]}" unless result_temp[item].nil?
+          puts "level_index: #{level_index}"
+          # puts "number_queue: #{number_queue}"
+          puts "coefficient: #{coefficient}"
         end
         coefficient = 1
-
-
-
       elsif flag == 0
         result_temp[item] += coefficient
         coefficient = 1
       elsif flag == 1
         coefficient *= item.to_i
       end
-      puts "item: #{item}, coefficient: #{coefficient}"
+      # puts "item: #{item}, coefficient: #{coefficient}"
     end
     # while !operater_temp.empty?
     #   item = operater_temp.shift
