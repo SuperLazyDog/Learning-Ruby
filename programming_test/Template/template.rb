@@ -1,10 +1,10 @@
 class DataOperater
   attr_accessor :data, :result
+  #----------------------------------------------------------------
+  #                    データの初期化と入力取得
+  #----------------------------------------------------------------
   def initialize
-    @datas = { # {test_count:   datas: [{user_location: store_count: stores:[{x, y}]}
-      test_count: 0,
-      datas: []
-    }
+    @datas = []
     @result = []
   end
 
@@ -12,67 +12,43 @@ class DataOperater
   def initialize_debug
     puts "initialized @result: #{@result}"
   end
-
   #　データの初期化
   def initialize_data
     # ファイルによるデータ初期化
-    File.open('sample_data_of_A.txt') do |file|
+    File.open('sample_data.txt') do |file|
       case_temp = []
       is_new_case = true
-      file.each_line.with_index(1) do |line, i|
-        temp_line = line.chomp
-        @datas[:test_count] = temp_line.to_s if i == 1
-        if i>2
-          if temp_line == ""
-            is_new_case = true
-            next
-          end
-          datas = temp_line.split(' ')
-          if is_new_case
-            @datas[:datas].push({ user_location: { x: datas[0].to_i, y: datas[1].to_i } })
-            is_new_case = false
-          else
-            if datas.count == 1
-              @datas[:datas].last[:store_count] = datas[0].to_i
-            else
-              @datas[:datas].last[:stores] = [] if @datas[:datas].last[:stores].nil?
-              @datas[:datas].last[:stores].push({ x: datas[0].to_i, y: datas[1].to_i })
-            end
-          end
-        end
+      file.each_line do |line|
+        @datas.push line.chomp
       end
     end
-    self.data_initialize_debug # TODO: delete here
+    self.data_build_debug # TODO: delete here
 
     # stdinによるデータ初期化
     # @datas.push $stdin.gets
-    # self.data_initialize_debug # TODO: delete here
+    # self.data_build_debug # TODO: delete here
   end
+
   #　データの初期化のデバッグ
-  def data_initialize_debug
+  def data_build_debug
     puts "@datas: #{@datas}"
   end
-
+  #----------------------------------------------------------------
+  #                         処理ロジック
+  #----------------------------------------------------------------
   #　出力のための処理
   def processer
-    @datas[:datas].each.with_index do |data, i|
-      user_location = data[:user_location]
-      distances = []
-      data[:stores].each do |store_location|
-        puts "store_location: #{store_location}"
-        distanceX = (user_location[:x] - store_location[:x])
-        distanceY = (user_location[:y] - store_location[:y])
-        distances.push Math.sqrt(distanceX*distanceX + distanceY*distanceY)
-      end
-      puts "distances: #{distances}"
-      maximun = distances.max
-      @result.push format_output i, distances.index(maximun), maximun
-    end
   end
 
-  def format_output(case_index, store_index, distance)
-    #Case #1: 2 44.72135955
-    str = "Case ##{case_index+1}: #{store_index+1} #{distance}\n"
+  #----------------------------------------------------------------
+  #                         データの出力
+  #----------------------------------------------------------------
+  def build_result(data)
+    # ここに出力のためのデータ@resultを　 に作る
+  end
+  def format_output_str(count)
+    # count
+    str = "count\n"
   end
 
   def show_result
@@ -80,6 +56,9 @@ class DataOperater
   end
 end
 
+#----------------------------------------------------------------
+#                        　 実行
+#----------------------------------------------------------------
 dataOperater = DataOperater.new
 dataOperater.initialize_data
 dataOperater.processer
