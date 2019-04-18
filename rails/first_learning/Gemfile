@@ -106,3 +106,10 @@ group :development, :test do
   # 2019/02/27 erd图
   gem 'rails-erd'
 end
+
+# TODO: 应用下面的库
+# 2019/04/18 面包屑导航栏
+gem "gretel"
+
+# 2019/04/18 搜索库
+gem 'ransack', github: 'activerecord-hackery/ransack'

@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: d44bfe6fe21ab374ceea9d060267d0d38b09ef28
+  specs:
+    polyamorous (2.1.1)
+      activerecord (>= 5.0)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
+      polyamorous (= 2.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,6 +119,8 @@ GEM
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
       hirb (~> 0.5)
@@ -305,6 +320,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  gretel
   hirb
   hirb-unicode
   jbuilder (~> 2.5)
@@ -319,6 +335,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1)
   rails-erd
+  ransack!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
