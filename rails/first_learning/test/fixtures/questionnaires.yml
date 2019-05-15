@@ -1,0 +1,52 @@
+# == Schema Information
+#
+# Table name: questionnaires
+#
+#  id         :integer          not null, primary key
+#  question   :string
+#  agreement  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+1:
+  question: '学校は勉強のためのところ'
+  agreement: 0
+
+2:
+  question: '会社は仕事のためのところ'
+  agreement: 0
+
+3:
+  question: '会社は仕事のためのところ'
+  agreement: 0
+
+4:
+  question: '僕が太っているんだけど、いい人だ'
+  agreement: 0
+
+5:
+  question: '学校サボりたい'
+  agreement: 0
+
+6:
+  question: '出席とる授業が大嫌い'
+  agreement: 0
+
+7:
+  question: '勉強大好き'
+  agreement: 0
+
+8:
+  question: '留学したい'
+  agreement: 1
+
+9:
+  question: '寝たい'
+  agreement: 1
+
+10:
+  question: '何もしたくない'
+  agreement: 2

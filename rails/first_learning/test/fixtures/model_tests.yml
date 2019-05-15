@@ -1,0 +1,88 @@
+# == Schema Information
+#
+# Table name: model_tests
+#
+#  id         :integer          not null, primary key
+#  hp         :integer
+#  mp         :integer
+#  ad         :integer
+#  ap         :integer
+#  def        :integer
+#  mdf        :integer
+#  phyle      :string
+#  israre     :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hp: 3000
+  mp: 2200
+  ad: 800
+  ap: 3200
+  def: 800
+  mdf: 2540
+  phyle: Human
+  israre: false
+
+two:
+  hp: 1200
+  mp: -1
+  ad: 4560
+  ap: 200
+  def: 7800
+  mdf: 1240
+  phyle: Human
+  israre: false
+
+three:
+  hp: 8000
+  mp: 5000
+  ad: 800
+  ap: 1200
+  def: 6000
+  mdf: 6000
+  phyle: Human
+  israre: true
+
+four:
+  hp: 3200
+  mp: 1300
+  ad: 1800
+  ap: 1200
+  def: 200
+  mdf: 1000
+  phyle: Human
+  israre: false
+
+five:
+  hp: 3890
+  mp: 2460
+  ad: 2400
+  ap: 1800
+  def: 1500
+  mdf: 1800
+  phyle: Human
+  israre: false
+
+six:
+  hp: 1234
+  mp: 1235
+  ad: 652
+  ap: 4686
+  def: 5462
+  mdf: 1264
+  phyle: Human
+  israre: true
+
+seven:
+  hp: 5672
+  mp: 1683
+  ad: 9531
+  ap: 8532
+  def: 4331
+  mdf: 800
+  phyle: Human
+  israre: false
