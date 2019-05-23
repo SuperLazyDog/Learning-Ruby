@@ -113,3 +113,8 @@ gem "gretel"
 
 # 2019/04/18 搜索库
 gem 'ransack', github: 'activerecord-hackery/ransack'
+
+# 2019/05/23 haml
+gem "haml"
+# gem 'haml-rails'
+gem 'erb2haml'
