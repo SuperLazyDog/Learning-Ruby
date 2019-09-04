@@ -121,3 +121,8 @@ gem 'erb2haml'
 
 # 2019/09/04
 # slim
+
+# 2019/09/05
+group :development, :test do
+  gem 'rspec-rails'
+end
