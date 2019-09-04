@@ -118,3 +118,6 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "haml"
 # gem 'haml-rails'
 gem 'erb2haml'
+
+# 2019/09/04
+# slim
