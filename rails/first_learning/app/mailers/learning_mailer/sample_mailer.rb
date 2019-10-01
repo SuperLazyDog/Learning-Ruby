@@ -1,5 +1,5 @@
 class LearningMailer::SampleMailer < ApplicationMailer
-
+  default to: "xu.ywwt.a1@gmail.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -7,8 +7,7 @@ class LearningMailer::SampleMailer < ApplicationMailer
   #
   def t1
     @greeting = "Hi"
-
-    mail to: "to@example.org"
+    mail
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
