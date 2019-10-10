@@ -62,4 +62,21 @@ RSpec.describe Book do
     it_behaves_like 'sample'
   end
   it { expect([]).to be_blank }
+
+
+  # factory test
+  it do
+    book = create(:book)
+    book2 = create(:sample)
+    puts "UUID book: #{book}, #{book.attributes} "
+    puts "UUID book2: #{book2}, #{book2.attributes}"
+    puts "UUID attributes_for: #{attributes_for :book}, #{attributes_for :sample}"
+    books = create_list(:book, 10, price: 9999)
+    books.each_with_index do |b, i|
+      puts "UUID books[#{i}]: #{b.attributes}"
+    end
+    expect(book.title).to eq("factory sample")
+    review = create(:review)
+    puts "UUID review: #{review.attributes}, book: #{review.book}, user: #{review.user}"
+  end
 end
