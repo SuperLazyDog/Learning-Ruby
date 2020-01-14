@@ -121,3 +121,8 @@ gem 'erb2haml'
 
 # 2019/09/04
 # slim
+
+# 2020/01/14
+# aws-sqs
+gem 'aws-sdk'
+gem 'aws-sdk-rails'
