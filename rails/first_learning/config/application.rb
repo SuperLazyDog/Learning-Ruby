@@ -15,5 +15,8 @@ module Railbook
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.action_controller.permit_all_parameters = true
+
+
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
