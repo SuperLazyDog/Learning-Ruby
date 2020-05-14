@@ -121,3 +121,7 @@ gem 'erb2haml'
 
 # 2019/09/04
 # slim
+
+# 2020/02/04
+gem 'solidus'
+gem 'solidus_auth_devise'
