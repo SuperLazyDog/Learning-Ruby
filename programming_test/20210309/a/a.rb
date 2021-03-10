@@ -6,10 +6,10 @@ def main(lines)
   lines.each_index do |i|
     map.push lines[i].chomp.split("")
   end
-  puts "H: #{h}, W: #{w}, T: #{target}"
-  puts "map: #{map}"
+  # puts "H: #{h}, W: #{w}, T: #{target}"
+  # puts "map: #{map}"
   count = process map, target, h, w
-  puts "#{k}"
+  puts "#{count}"
 end
 
 def process(map, target, h, w)
@@ -25,32 +25,32 @@ def process(map, target, h, w)
   end
   return count
 end
-k = 0
+
 def get_num(map, t, ch, cw, h, w, i, length, only_down)
-  puts "#{t[i]}, #{map[ch][cw]}, i: #{i}, {i, j}: {#{ch}, #{cw}}"
   if map[ch][cw] == t[i]
-    if i < length
-      if cw < w && !only_down
-        get_num(map, t, ch, cw+1, h, w, i+1, length, false)
+    if i < length - 1
+        r1 = 0; r2 = 0
+      if cw+1 < w && !only_down
+        r1 = get_num(map, t, ch, cw+1, h, w, i+1, length, false)
       end
-      if ch < h
-        get_num(map, t, ch+1, cw, h, w, i+1, length, true)
+      if ch+1 < h
+        r2 = get_num(map, t, ch+1, cw, h, w, i+1, length, true)
       end
+      return r1 + r2
     else
-      k += 1
       return 1
     end
+  else
+    return 0
   end
 end
 
 
+main(readlines)
 
 
-
-lines = %Q(
-  2 3
-  abc
-  cba
-  abb
-)
-main(lines)
+# lines = ["2 3",
+# "abc",
+# "cba",
+# "bca"]
+# main(lines)
