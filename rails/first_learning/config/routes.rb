@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :devise_users
+  
   namespace :pro do
     get 'decorator_test/t1'
   end
