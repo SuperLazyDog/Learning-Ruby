@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Blorgh::VERSION
   spec.authors     = ["SuperLazyDog"]
   spec.email       = ["weida.xu@super-studio.jp"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Blorgh."
-  spec.description = "TODO: Description of Blorgh."
+  spec.homepage    = "https://github.com/SuperLazyDog/Learning-Ruby"
+  spec.summary     = "Summary of Blorgh."
+  spec.description = "Description of Blorgh."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
