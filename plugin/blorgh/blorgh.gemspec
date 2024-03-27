@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name        = "blorgh"
   spec.version     = Blorgh::VERSION
   spec.authors     = ["SuperLazyDog"]
-  spec.email       = ["weida.xu@super-studio.jp"]
+  spec.email       = ["jyoitatsu@gmail.com"]
   spec.homepage    = "https://github.com/SuperLazyDog/Learning-Ruby"
   spec.summary     = "Summary of Blorgh."
   spec.description = "Description of Blorgh."
