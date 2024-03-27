@@ -11,5 +11,10 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
+# fix Could not find server ''
+# https://stackoverflow.com/questions/63811244/rails-will-not-run-server
+# gem 'webrick', '~> 1.7'
+gem 'puma', '~> 5.2'
+
 # To use a debugger
 # gem 'byebug', group: [:development, :test]

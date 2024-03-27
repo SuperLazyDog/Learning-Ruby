@@ -28,4 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 6.0.6"
 
   spec.add_development_dependency "sqlite3"
+  # fix Psych::BadAlias: Unknown alias: default
+  # https://qiita.com/Bjp8kHYYPFq8MrI/items/90a9db03160f8d6f7e5c
+  spec.add_development_dependency 'psych', '~> 3.1'
+  # spec.add_development_dependency 'mutex_m'
 end
