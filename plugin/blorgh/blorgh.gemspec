@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   # https://qiita.com/Bjp8kHYYPFq8MrI/items/90a9db03160f8d6f7e5c
   spec.add_development_dependency 'psych', '~> 3.1'
   # spec.add_development_dependency 'mutex_m'
+  spec.add_development_dependency 'sidekiq', '~> 6.2', '>= 6.2.2'
 end
