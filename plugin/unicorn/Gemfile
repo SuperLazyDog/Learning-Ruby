@@ -54,6 +54,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-# gem 'blorgh', path: '../blorgh'
+gem 'blorgh', path: '../blorgh'
 gem 'psych', '~> 3.1'
 

@@ -33,4 +33,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'psych', '~> 3.1'
   # spec.add_development_dependency 'mutex_m'
   spec.add_development_dependency 'sidekiq', '~> 6.2', '>= 6.2.2'
+
+
+
+  spec.add_development_dependency 'redis', '~> 4.2', '>= 4.2.2'
+  spec.add_development_dependency 'redis-namespace', '~> 1.7', '>= 1.7.0'
+  # no needed
+  # https://github.com/redis-store/redis-rails
+  # spec.add_development_dependency 'redis-rails', '~> 5.0', '>= 5.0.2'
 end
