@@ -171,6 +171,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.8.1)
+    redis-namespace (1.11.0)
+      redis (>= 4)
     regexp_parser (2.9.0)
     rexml (3.2.6)
     rubyzip (2.3.2)
@@ -253,6 +255,8 @@ DEPENDENCIES
   psych (~> 3.1)
   puma (~> 4.1)
   rails (~> 6.0.6, >= 6.0.6.1)
+  redis (~> 4.2, >= 4.2.2)
+  redis-namespace (~> 1.7, >= 1.7.0)
   sass-rails (>= 6)
   selenium-webdriver
   sidekiq (~> 6.2, >= 6.2.2)
