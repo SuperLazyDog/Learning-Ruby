@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'blorgh', path: '../blorgh'
 gem 'psych', '~> 3.1'
 
+gem 'sidekiq', '~> 6.2', '>= 6.2.2'
+
