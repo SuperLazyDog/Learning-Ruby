@@ -1,0 +1,14 @@
+---
+# MEMO: weida: put this file in the application config directory
+# :concurrency: 5
+# staging:
+#   :concurrency: 10
+# production:
+#   :concurrency: 10
+# development:
+#   :concurrency: 10
+:queues:
+  - highest_priority
+  - default
+  - my_queue
+  - my_retry_queue
