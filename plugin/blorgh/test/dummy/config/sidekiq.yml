@@ -12,3 +12,6 @@
   - default
   - my_queue
   - my_retry_queue
+# :logfile: ./log/uuid_sidekiq.log
+# :pidfile: ./tmp/pids/sidekiq-0.pid
+:verbose: true
