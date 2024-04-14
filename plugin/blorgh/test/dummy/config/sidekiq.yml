@@ -8,6 +8,8 @@
 # development:
 #   :concurrency: 10
 :queues:
+  - default_active_job_queue
+  - active_job_queue
   - highest_priority
   - default
   - my_queue
