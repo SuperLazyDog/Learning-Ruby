@@ -17,3 +17,6 @@
 # :logfile: ./log/uuid_sidekiq.log
 # :pidfile: ./tmp/pids/sidekiq-0.pid
 :verbose: true
+
+# require sidekiq-limit_fetch to enable this feature
+# :dynamic: true

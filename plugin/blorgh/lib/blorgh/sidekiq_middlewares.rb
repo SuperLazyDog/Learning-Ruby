@@ -74,6 +74,18 @@ module Blorgh::SidekiqMiddlewares
     end
   end
 
+  module ::Sidekiq::Cron
+    class Job
+      class_eval do
+        alias_method :__initialize__, :initialize
+        def initialize input_args = {}
+          puts "UUID weida: Sidekiq::Cron::Job initialize: #{input_args}"
+          __initialize__(input_args)
+        end
+      end
+    end
+  end
+
   # server middlewares
   module Server
     class OutputTagsMiddleware
@@ -115,6 +127,7 @@ module Blorgh::SidekiqMiddlewares
 
       def call(job_class, msg, queue, redis_pool, &block)
         push_tags(msg, *tags)
+        # puts "UUID weida: Client::InputTagsMiddleware msg: #{msg}"
         yield
       end
     end

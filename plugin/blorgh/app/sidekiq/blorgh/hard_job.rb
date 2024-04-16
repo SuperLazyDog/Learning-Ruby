@@ -1,4 +1,5 @@
 require 'sidekiq'
+require 'sidekiq-cron'
 module Blorgh
   class HardJob
     include Sidekiq::Job

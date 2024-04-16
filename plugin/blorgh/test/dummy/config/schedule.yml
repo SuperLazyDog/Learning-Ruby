@@ -1,0 +1,15 @@
+---
+# MEMO: weida: put this file in the application config directory
+my_first_job:
+  cron: "* * * * *"
+  class: "Blorgh::HardJob"
+  queue: default
+  args:
+    name: "my_first_job"
+
+second_job:
+  cron: "* * * * *" # execute at every 30 minutes
+  class: "Blorgh::HardJob"
+  queue: default
+  args:
+    name: "my_second_job"

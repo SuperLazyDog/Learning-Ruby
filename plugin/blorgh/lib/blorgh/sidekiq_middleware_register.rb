@@ -6,6 +6,10 @@ module Blorgh::SidekiqMiddlewareRegister
         chain.add Blorgh::SidekiqMiddlewares::Server::OutputTagsMiddleware
         chain.prepend Blorgh::SidekiqMiddlewares::Server::LoggerMiddleware
       end
+
+      config.client_middleware do |chain|
+        chain.add Blorgh::SidekiqMiddlewares::Client::InputTagsMiddleware, 'test_parameter_tag1'
+      end
     end
 
     Sidekiq.configure_client do |config|
