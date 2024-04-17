@@ -19,4 +19,4 @@ gem 'puma', '~> 5.2'
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-# gem 'sidekiq', path: '/Users/weida.xu/Desktop/super-studio/sidekiq'
+gem 'apartment', path: '/Users/weida.xu/Desktop/github/apartment'

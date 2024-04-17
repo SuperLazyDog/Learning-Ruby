@@ -43,4 +43,7 @@ Gem::Specification.new do |spec|
   # no needed
   # https://github.com/redis-store/redis-rails
   # spec.add_development_dependency 'redis-rails', '~> 5.0', '>= 5.0.2'
+
+  # dont support rails 6 so use customised version in Gemfile
+  # spec.add_development_dependency 'apartment', '~>2.2.1'
 end
