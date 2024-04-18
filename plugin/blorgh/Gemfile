@@ -19,7 +19,11 @@ gem 'puma', '~> 5.2'
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-gem 'apartment', path: '/Users/weida.xu/Desktop/github/apartment'
+gem 'rack', path: '/Users/weida.xu/Desktop/github/rack'
 gem 'rails', path: '/Users/weida.xu/Desktop/github/rails'
 gem 'actionpack', path: '/Users/weida.xu/Desktop/github/rails/actionpack'
-gem 'rack', path: '/Users/weida.xu/Desktop/github/rack'
+
+gem 'apartment', path: '/Users/weida.xu/Desktop/github/apartment'
+gem 'apartment-sidekiq', path: '/Users/weida.xu/Desktop/github/apartment-sidekiq'
+
+

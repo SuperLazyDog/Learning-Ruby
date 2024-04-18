@@ -113,6 +113,13 @@ module Blorgh::SidekiqMiddlewares
         Sidekiq.logger
       end
     end
+
+    class DisablePerformMiddleware
+      include ::Sidekiq::ServerMiddleware
+      def call(job_instance, msg, queue, &block)
+        puts "UUID weida: DisablePerformMiddleware"
+      end
+    end
   end
 
   # client middlewares

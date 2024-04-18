@@ -5,6 +5,13 @@ PATH
       rails (~> 6.0.6)
 
 PATH
+  remote: /Users/weida.xu/Desktop/github/apartment-sidekiq
+  specs:
+    apartment-sidekiq (1.2.0)
+      apartment (>= 1.0)
+      sidekiq (>= 2.11)
+
+PATH
   remote: /Users/weida.xu/Desktop/github/apartment
   specs:
     apartment (2.2.1)
@@ -216,6 +223,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack!
   apartment!
+  apartment-sidekiq!
   blorgh!
   psych (~> 3.1)
   puma (~> 5.2)

@@ -5,6 +5,7 @@ module Blorgh::SidekiqMiddlewareRegister
       config.server_middleware do |chain|
         chain.add Blorgh::SidekiqMiddlewares::Server::OutputTagsMiddleware
         chain.prepend Blorgh::SidekiqMiddlewares::Server::LoggerMiddleware
+        # chain.add Blorgh::SidekiqMiddlewares::Server::DisablePerformMiddleware
       end
 
       config.client_middleware do |chain|
