@@ -20,3 +20,6 @@ gem 'puma', '~> 5.2'
 # gem 'byebug', group: [:development, :test]
 
 gem 'apartment', path: '/Users/weida.xu/Desktop/github/apartment'
+gem 'rails', path: '/Users/weida.xu/Desktop/github/rails'
+gem 'actionpack', path: '/Users/weida.xu/Desktop/github/rails/actionpack'
+gem 'rack', path: '/Users/weida.xu/Desktop/github/rack'

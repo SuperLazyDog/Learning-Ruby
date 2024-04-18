@@ -50,7 +50,7 @@ Apartment.configure do |config|
   #
   # config.tenant_names = lambda { ToDo_Tenant_Or_User_Model.pluck :database }
   # TODO: uuid weida set tenant_names
-  config.tenant_names = ['tenant_a', 'tenant_b', 'tenant_c']
+  config.tenant_names = ['tenant_a', 'tenant_b', 'tenant_c', 'test', 'development']
 
   # PostgreSQL:
   #   Specifies whether to use PostgreSQL schemas or create a new database per Tenant.
@@ -99,7 +99,7 @@ Apartment.configure do |config|
   # config.pg_excluded_names = ["uuid_generate_v4"]
 
   # run migration in parallel
-  config.parallel_migration_threads = 4
+  # config.parallel_migration_threads = 4
 end
 
 # Setup a custom Tenant switching middleware. The Proc should return the name of the Tenant that
@@ -107,8 +107,11 @@ end
 # Rails.application.config.middleware.use Apartment::Elevators::Generic, lambda { |request|
 #   request.host.split('.').first
 # }
-
+Rails.application.config.middleware.use Apartment::Elevators::Generic, lambda { |request|
+  # puts "request: #{request}, request.params: #{request.params}, request.host: #{request.host}, request.subdomain: #{request.subdomain}"
+  Apartment.tenant_names.find { |tn| tn == request.params['tenant'] } || 'development'
+}
 # Rails.application.config.middleware.use Apartment::Elevators::Domain
-Rails.application.config.middleware.use Apartment::Elevators::Subdomain
+# Rails.application.config.middleware.use Apartment::Elevators::Subdomain
 # Rails.application.config.middleware.use Apartment::Elevators::FirstSubdomain
 # Rails.application.config.middleware.use Apartment::Elevators::Host

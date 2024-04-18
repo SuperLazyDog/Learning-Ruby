@@ -13,6 +13,41 @@ PATH
       public_suffix (>= 2)
       rack (>= 1.3.6)
 
+PATH
+  remote: /Users/weida.xu/Desktop/github/rack
+  specs:
+    rack (2.2.9)
+
+PATH
+  remote: /Users/weida.xu/Desktop/github/rails/actionpack
+  specs:
+    actionpack (6.0.6.1)
+      actionview (= 6.0.6.1)
+      activesupport (= 6.0.6.1)
+      rack (~> 2.0, >= 2.0.8)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.2.0)
+
+PATH
+  remote: /Users/weida.xu/Desktop/github/rails
+  specs:
+    rails (6.0.6.1)
+      actioncable (= 6.0.6.1)
+      actionmailbox (= 6.0.6.1)
+      actionmailer (= 6.0.6.1)
+      actionpack (= 6.0.6.1)
+      actiontext (= 6.0.6.1)
+      actionview (= 6.0.6.1)
+      activejob (= 6.0.6.1)
+      activemodel (= 6.0.6.1)
+      activerecord (= 6.0.6.1)
+      activestorage (= 6.0.6.1)
+      activesupport (= 6.0.6.1)
+      bundler (>= 1.3.0)
+      railties (= 6.0.6.1)
+      sprockets-rails (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,13 +68,6 @@ GEM
       activejob (= 6.0.6.1)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 2.0)
-    actionpack (6.0.6.1)
-      actionview (= 6.0.6.1)
-      activesupport (= 6.0.6.1)
-      rack (~> 2.0, >= 2.0.8)
-      rack-test (>= 0.6.3)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.0, >= 1.2.0)
     actiontext (6.0.6.1)
       actionpack (= 6.0.6.1)
       activerecord (= 6.0.6.1)
@@ -127,24 +155,8 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.7.3)
-    rack (2.2.9)
     rack-test (2.1.0)
       rack (>= 1.3)
-    rails (6.0.6.1)
-      actioncable (= 6.0.6.1)
-      actionmailbox (= 6.0.6.1)
-      actionmailer (= 6.0.6.1)
-      actionpack (= 6.0.6.1)
-      actiontext (= 6.0.6.1)
-      actionview (= 6.0.6.1)
-      activejob (= 6.0.6.1)
-      activemodel (= 6.0.6.1)
-      activerecord (= 6.0.6.1)
-      activestorage (= 6.0.6.1)
-      activesupport (= 6.0.6.1)
-      bundler (>= 1.3.0)
-      railties (= 6.0.6.1)
-      sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -202,10 +214,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actionpack!
   apartment!
   blorgh!
   psych (~> 3.1)
   puma (~> 5.2)
+  rack!
+  rails!
   redis (~> 4.2, >= 4.2.2)
   redis-namespace (~> 1.7, >= 1.7.0)
   sidekiq (~> 6.2, >= 6.2.2)
