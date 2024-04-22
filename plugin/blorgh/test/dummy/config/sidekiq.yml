@@ -1,6 +1,6 @@
 ---
 # MEMO: weida: put this file in the application config directory
-# :concurrency: 5
+:concurrency: 1
 # staging:
 #   :concurrency: 10
 # production:

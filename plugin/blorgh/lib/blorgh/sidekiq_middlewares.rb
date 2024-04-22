@@ -103,7 +103,7 @@ module Blorgh::SidekiqMiddlewares
       def call(job_instance, msg, queue, &block)
         if logger.respond_to?(:tagged)
           puts "UUID weida: job level tags: #{compute_tags(msg)}"
-          logger.tagged('dummy_job_tag', *compute_tags(msg)) { yield }
+          logger.tagged('dummy_job_tag', *compute_tags(msg), msg['apartment']) { yield }
         else
           yield
         end
